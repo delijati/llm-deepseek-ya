@@ -225,6 +225,8 @@ def register_models(register):
     try:
         models = get_deepseek_models()
         models_with_aliases = get_model_ids_with_aliases(models)
+        
+        # First register all Chat models
         for model_id, aliases in models_with_aliases:
             register(
                 DeepSeekChat(
@@ -233,13 +235,17 @@ def register_models(register):
                 ),
                 aliases=[model_id]
             )
-            register(
-                DeepSeekCompletion(
-                    model_id=f"deepseekcompletion/{model_id}",
-                    model_name=model_id,
-                ),
-                aliases=[f"{model_id}-completion"]
-            )
+        
+        # Then register Completion models (excluding reasoner)
+        for model_id, aliases in models_with_aliases:
+            if "reasoner" not in model_id.lower():
+                register(
+                    DeepSeekCompletion(
+                        model_id=f"deepseekcompletion/{model_id}",
+                        model_name=model_id,
+                    ),
+                    aliases=[f"{model_id}-completion"]
+                )
     except DownloadError as e:
         print(f"Error fetching DeepSeek models: {e}")
 
@@ -255,11 +261,18 @@ def register_commands(cli):
         try:
             models = get_deepseek_models()
             models_with_aliases = get_model_ids_with_aliases(models)
+            
+            # First display all Chat models
             for model_id, aliases in models_with_aliases:
                 print(f"DeepSeek Chat: deepseekchat/{model_id}")
                 print(f"  Aliases: {model_id}")
-                print(f"DeepSeek Completion: deepseekcompletion/{model_id}")
-                print(f"  Aliases: {model_id}-completion")
                 print()
+            
+            # Then display all Completion models (excluding reasoner)
+            for model_id, aliases in models_with_aliases:
+                if "reasoner" not in model_id.lower():
+                    print(f"DeepSeek Completion: deepseekcompletion/{model_id}")
+                    print(f"  Aliases: {model_id}-completion")
+                    print()
         except DownloadError as e:
             print(f"Error fetching DeepSeek models: {e}")

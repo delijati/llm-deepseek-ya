@@ -33,8 +33,9 @@ Run prompts like this:
 llm -m deepseek-chat "Describe a futuristic city on Mars"
 llm -m deepseek-chat-completion "The AI began to dream, and in its dreams," -o echo true
 llm -m deepseek-reasoner "Write a Python function to sort a list of numbers"
-llm -m deepseek-reasoner-completion "IDENTIFICATION DIVISION. PROGRAM-ID. skynet." -o echo true
 ```
+
+Note: The DeepSeek Reasoner model only supports the chat endpoint, not the completion endpoint.
 
 ### New Features
 
