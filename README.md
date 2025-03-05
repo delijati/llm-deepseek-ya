@@ -37,6 +37,20 @@ llm -m deepseek-reasoner "Write a Python function to sort a list of numbers"
 
 Note: The DeepSeek Reasoner model only supports the chat endpoint, not the completion endpoint.
 
+### DeepSeek Reasoner Model
+
+The DeepSeek Reasoner model uses a Chain of Thought (CoT) approach to solve complex problems, showing its reasoning process before providing the final answer.
+
+The plugin shows the model's chain of thought reasoning by default in non-streaming mode. The reasoning feature is currently only supported in non-streaming mode.
+
+```bash
+# Normal usage - will show reasoning by default
+llm -m deepseek-reasoner "What is 537 * 943?"
+
+# Hide reasoning when you only want the final answer
+llm -m deepseek-reasoner "What is 537 * 943?" -o show_reasoning false
+```
+
 ### New Features
 
 #### Prefill

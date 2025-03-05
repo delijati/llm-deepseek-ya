@@ -48,6 +48,10 @@ class DeepSeekChat(Chat):
             description="Format of the response (e.g., 'json_object').",
             default=None
         )
+        show_reasoning: Optional[bool] = Field(
+            description="Show the chain of thought reasoning for the DeepSeek Reasoner model.",
+            default=True
+        )
 
     def execute(self, prompt, stream, response, conversation, key=None):
         messages = self._build_messages(conversation, prompt)
@@ -58,7 +62,10 @@ class DeepSeekChat(Chat):
         if prompt.options.response_format:
             kwargs["response_format"] = {"type": prompt.options.response_format}
 
+        # Remove options that aren't supported by the OpenAI client
         kwargs.pop('prefill', None)
+        kwargs.pop('show_reasoning', None)
+        show_reasoning = prompt.options.show_reasoning
 
         client = self.get_client(key)
 
@@ -71,12 +78,35 @@ class DeepSeekChat(Chat):
                 **kwargs,
             )
 
-            for chunk in completion:
-                content = chunk.choices[0].delta.content
-                if content is not None:
-                    yield content
+            if stream:
+                for chunk in completion:
+                    # Stream both reasoning content and regular content directly
+                    content = chunk.choices[0].delta.content
+                    reasoning_content = getattr(chunk.choices[0].delta, "reasoning_content", None)
+                    
+                    if reasoning_content is not None and show_reasoning:
+                        yield reasoning_content
+                        
+                    if content is not None:
+                        yield content
+            else:
+                # For non-streaming response
+                content = completion.choices[0].message.content
+                # If we have reasoning content and want to show it
+                if show_reasoning and hasattr(completion.choices[0].message, "reasoning_content"):
+                    reasoning = completion.choices[0].message.reasoning_content
+                    if reasoning:
+                        yield reasoning
+                        yield "\n\n"
+                # Then output the regular content
+                yield content
 
             response.response_json = {"content": "".join(response._chunks)}
+            
+            # Store reasoning_content in response if available
+            if not stream and hasattr(completion.choices[0].message, "reasoning_content"):
+                response.response_json["reasoning_content"] = completion.choices[0].message.reasoning_content
+                
         except httpx.HTTPError as e:
             raise llm.ModelError(f"DeepSeek API error: {str(e)}")
 
@@ -142,7 +172,9 @@ class DeepSeekCompletion(Completion):
         if prompt.options.echo:
             kwargs["echo"] = prompt.options.echo
 
+        # Remove custom options from kwargs
         kwargs.pop('prefill', None)
+        kwargs.pop('show_reasoning', None)  # Remove if it exists
 
         client = self.get_client(key)
 
@@ -276,3 +308,4 @@ def register_commands(cli):
                     print()
         except DownloadError as e:
             print(f"Error fetching DeepSeek models: {e}")
+
