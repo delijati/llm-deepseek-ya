@@ -32,8 +32,8 @@ Run prompts like this:
 ```bash
 llm -m deepseek-chat "Describe a futuristic city on Mars"
 llm -m deepseek-chat-completion "The AI began to dream, and in its dreams," -o echo true
-llm -m deepseek-coder "Write a Python function to sort a list of numbers"
-llm -m deepseek-coder-completion "IDENTIFICATION DIVISION. PROGRAM-ID. skynet." -o echo true
+llm -m deepseek-reasoner "Write a Python function to sort a list of numbers"
+llm -m deepseek-reasoner-completion "IDENTIFICATION DIVISION. PROGRAM-ID. skynet." -o echo true
 ```
 
 ### New Features
@@ -47,6 +47,18 @@ Example:
 ```bash
 llm -m deepseek-chat "What are some wild and crazy activities for a holiday party?" -o prefill "Here are some off-the-wall ideas to make your holiday party unforgettable [warning: these may not be suitable for work holiday parties]:"
 ```
+
+You can also load prefill text from a file:
+
+```bash
+# Create a file with your prefill text
+echo "Here are some unique holiday party ideas:" > prefill.txt
+
+# Use the file path as the prefill value
+llm -m deepseek-chat "What are some fun activities for a holiday party?" -o prefill prefill.txt
+```
+
+This is especially useful for longer prefill text that would be unwieldy on the command line.
 
 #### JSON Response Format
 

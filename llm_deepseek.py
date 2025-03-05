@@ -4,6 +4,7 @@ from pathlib import Path
 import json
 import time
 import httpx
+import os
 from typing import Optional
 from pydantic import Field
 
@@ -48,10 +49,10 @@ class DeepSeekChat(Chat):
             default=None
         )
 
-    def execute(self, prompt, stream, response, conversation):
+    def execute(self, prompt, stream, response, conversation, key=None):
         messages = self._build_messages(conversation, prompt)
         response._prompt_json = {"messages": messages}
-        kwargs = self.build_kwargs(prompt)
+        kwargs = self.build_kwargs(prompt, stream)
 
         max_tokens = kwargs.pop('max_tokens', 8192)
         if prompt.options.response_format:
@@ -59,7 +60,7 @@ class DeepSeekChat(Chat):
 
         kwargs.pop('prefill', None)
 
-        client = self.get_client()
+        client = self.get_client(key)
 
         try:
             completion = client.chat.completions.create(
@@ -94,9 +95,18 @@ class DeepSeekChat(Chat):
         messages.append({"role": "user", "content": prompt.prompt})
 
         if prompt.options.prefill:
+            prefill_content = prompt.options.prefill
+            # Check if prefill value is a file path
+            if os.path.exists(prefill_content) and os.path.isfile(prefill_content):
+                try:
+                    with open(prefill_content, 'r') as file:
+                        prefill_content = file.read()
+                except Exception as e:
+                    print(f"Warning: Could not read prefill file '{prompt.options.prefill}': {e}")
+            
             messages.append({
                 "role": "assistant",
-                "content": prompt.options.prefill,
+                "content": prefill_content,
                 "prefix": True
             })
 
@@ -123,10 +133,10 @@ class DeepSeekCompletion(Completion):
             default=None
         )
 
-    def execute(self, prompt, stream, response, conversation):
+    def execute(self, prompt, stream, response, conversation, key=None):
         full_prompt = self._build_full_prompt(conversation, prompt)
         response._prompt_json = {"prompt": full_prompt}
-        kwargs = self.build_kwargs(prompt)
+        kwargs = self.build_kwargs(prompt, stream)
 
         max_tokens = kwargs.pop('max_tokens', 4096)
         if prompt.options.echo:
@@ -134,7 +144,7 @@ class DeepSeekCompletion(Completion):
 
         kwargs.pop('prefill', None)
 
-        client = self.get_client()
+        client = self.get_client(key)
 
         try:
             completion = client.completions.create(
@@ -169,7 +179,16 @@ class DeepSeekCompletion(Completion):
 
         full_prompt = "\n".join(messages)
         if prompt.options.prefill:
-            full_prompt += f"\n{prompt.options.prefill}"
+            prefill_content = prompt.options.prefill
+            # Check if prefill value is a file path
+            if os.path.exists(prefill_content) and os.path.isfile(prefill_content):
+                try:
+                    with open(prefill_content, 'r') as file:
+                        prefill_content = file.read()
+                except Exception as e:
+                    print(f"Warning: Could not read prefill file '{prompt.options.prefill}': {e}")
+            
+            full_prompt += f"\n{prefill_content}"
 
         return full_prompt
 
