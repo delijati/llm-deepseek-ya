@@ -1,0 +1,99 @@
+interactions:
+- request:
+    body: '{"messages":[{"role":"system","content":"You are a helpful assistant.\n\nYou
+      must respond with valid JSON matching this schema:\n{\n  \"$defs\": {\n    \"Item\":
+      {\n      \"properties\": {\n        \"product_name\": {\n          \"title\":
+      \"Product Name\",\n          \"type\": \"string\"\n        },\n        \"quantity\":
+      {\n          \"title\": \"Quantity\",\n          \"type\": \"integer\"\n        }\n      },\n      \"required\":
+      [\n        \"product_name\",\n        \"quantity\"\n      ],\n      \"title\":
+      \"Item\",\n      \"type\": \"object\"\n    },\n    \"Order\": {\n      \"properties\":
+      {\n        \"items\": {\n          \"items\": {\n            \"$ref\": \"#/$defs/Item\"\n          },\n          \"title\":
+      \"Items\",\n          \"type\": \"array\"\n        }\n      },\n      \"required\":
+      [\n        \"items\"\n      ],\n      \"title\": \"Order\",\n      \"type\":
+      \"object\"\n    }\n  },\n  \"properties\": {\n    \"name\": {\n      \"title\":
+      \"Name\",\n      \"type\": \"string\"\n    },\n    \"orders\": {\n      \"items\":
+      {\n        \"$ref\": \"#/$defs/Order\"\n      },\n      \"title\": \"Orders\",\n      \"type\":
+      \"array\"\n    }\n  },\n  \"required\": [\n    \"name\",\n    \"orders\"\n  ],\n  \"title\":
+      \"Customer\",\n  \"type\": \"object\"\n}"},{"role":"user","content":"Create
+      a customer named Carol with 2 orders, each containing 2 items"}],"model":"deepseek-chat","max_tokens":8192,"response_format":{"type":"json_object"},"stream":false}'
+    headers:
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      content-length:
+      - '1480'
+      content-type:
+      - application/json
+      host:
+      - api.deepseek.com
+      user-agent:
+      - OpenAI/Python 1.65.5
+      x-stainless-arch:
+      - x64
+      x-stainless-async:
+      - 'false'
+      x-stainless-lang:
+      - python
+      x-stainless-os:
+      - Linux
+      x-stainless-package-version:
+      - 1.65.5
+      x-stainless-read-timeout:
+      - '600'
+      x-stainless-retry-count:
+      - '0'
+      x-stainless-runtime:
+      - CPython
+      x-stainless-runtime-version:
+      - 3.11.9
+    method: POST
+    uri: https://api.deepseek.com/beta/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAwAAAP//tFPbjpswEP0VNM+mAgOB+HV/YN+XyHLsIbgB27WdqivEv69IFJK9VEql
+        rp/sc5k5Hmkm0AoY5GUl6Lbs0rors7Sstpg2RVGkm6LJt1u531S0AwJ2/xNlBAayF/GHtKMbMGpr
+        gID0KCIqYHm9yRta0bwkMFqFAzBQiC4gHtPFt4h7qyUGYC8TaKPwD7CMwIghiAMCm8DbAYGBCEGH
+        KMzZY01EszSfWpMkSdKCESO2wJIWnoS3Qwvkyliv0IeFe7lAy5lu14tKRxw/iv4ivpmct+okI781
+        f74gSb4G+Oz6dRIm6vi6OPLPopn8lwT0wQT0iwTvod3teZ/tu0dYPPiB4ttGWD6YoPynEV6uu9bM
+        MBMY7MF5uw/AzGkYCHTa6NBzjyJYAwxCtA7mHYHTdR+ct6OLPNojmgCsoPWyENf1W/GcbghEG8Ww
+        QmVVkPd2rjAKPYSlrhSyR3VXN5tX9Znjvb5vm31gRx3CStczgfAaIo680+aA3nl9XtjO8a6TNW1y
+        VTZ8mX3W0Ix3ruHH3+dCML8BAAD//wMArw5+SYkEAAA=
+    headers:
+      CF-RAY:
+      - 996ab686fa71e507-TXL
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 30 Oct 2025 11:53:34 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=qgJg.F1AKP4lfM1AxBdjuHlETxv9GF3O4sjVbeATmho-1761825214-1.0.1.1-aCP1i5jVvSsdrw4tO3KL9CCQ1FuDeiuKnL8MKHVliBM6uBlPX1TzXggd1tD3rWjGGapxJ87jeg5Mt7xEnb7eWKVfSa9aGgt4RjJpN9Higes;
+        path=/; expires=Thu, 30-Oct-25 12:23:34 GMT; domain=.deepseek.com; HttpOnly;
+        Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      access-control-allow-credentials:
+      - 'true'
+      cf-cache-status:
+      - DYNAMIC
+      vary:
+      - origin, access-control-request-method, access-control-request-headers
+      x-ds-trace-id:
+      - 4b6d9992c34b7f92c179e6cad4163cc1
+    status:
+      code: 200
+      message: OK
+version: 1

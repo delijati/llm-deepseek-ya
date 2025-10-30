@@ -1,0 +1,93 @@
+interactions:
+- request:
+    body: '{"messages":[{"role":"user","content":"What is 2 + 2?"}],"model":"deepseek-reasoner","max_tokens":8192,"stream":false}'
+    headers:
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      content-length:
+      - '118'
+      content-type:
+      - application/json
+      host:
+      - api.deepseek.com
+      user-agent:
+      - OpenAI/Python 1.65.5
+      x-stainless-arch:
+      - x64
+      x-stainless-async:
+      - 'false'
+      x-stainless-lang:
+      - python
+      x-stainless-os:
+      - Linux
+      x-stainless-package-version:
+      - 1.65.5
+      x-stainless-read-timeout:
+      - '600'
+      x-stainless-retry-count:
+      - '0'
+      x-stainless-runtime:
+      - CPython
+      x-stainless-runtime-version:
+      - 3.11.9
+    method: POST
+    uri: https://api.deepseek.com/beta/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAwAAAP//fFTBjuM2DP0VVpc5VBMk3skkE6DobYGcu8AeOkVAS3SsjSx6RTkZY5B/
+        L6Q4ycyi6M2Qycf3yEe+K2fVRtFL/aWer14eq2pNj0/zavVYL5EeF8/mZflSrWhujdKK6x9kktoo
+        02KaGe56T8lxUFqZSJjIqs1i9bxYV8vFcqlVx5a82ihL1AvR4TESCgeKOaFlZ0jU5u935YKlN7WZ
+        a9WRCO5Jbd5VZE9qo1DEScKQcg6HRCET+NYSyNABN1DB71CBE3iawbfWSf5EqFGcAYwutR0lZ6BB
+        k8AFSC2BJeM69BCGrqYIMkqibgbbBkYeoMUjAYYRmiGmliL8HEiyTNHQEHloIhEkBpTDb0qriygX
+        9rs7v68uStKl2DU783pV31tM+auw/vNV/R/lPnLtCzE4BD5ByrlorbvCcaDcgVylGYLFjkJCD9xT
+        xEI4C+4wtdRhckZm8L2lUESitZBOPLVAdHk03NUuUAZ0EY7oB5LZa3gNf7EG18D20psKMFjYFgwM
+        XHpU6Qu9jjAIbB+6CcyFfamzjzz0UtieeAZfOQK9YTbQR+QciX3vSUoJ4Y6yxr07kkB3+d9xpClI
+        X/MaHuIt0SfeUyaV/UCRGo6kJ5tIy4O3QD8H9PBUtG0hkkHvL/x/ccjFGhpOrTMtnAgGIaAjxdHi
+        qO/eyw4m+9mCxXEFdPtwJPCEMZAFccEQmNZ52zLbItQJGA7Z6BQSoIksWYiH7HyL0X6aYmZdlEHn
+        9m2CmiBFZw4CHOEHH3ITah5ycScavDtQ1pW7CcWib0ngVAB64t4TCI6Tlj9gCQ1HaIeOIw8C1DRk
+        koZ6uIh5EAicPvBB70cwHCOZNINtgEjoXRp1wRGXZ3xz7YeWoT/hKNMQssFyeO59P8SeZXK2k7xA
+        ccyjnoaX3VACp6KAQU7TtPN8YkbPov0IKe9e2F8sZjBAi8F6mnbtttilcYMkOGFIeXaSIubeNhxP
+        uf2RpOcgdO/9xVXdOFW/kqsJnmbqrJXnfd5fUZsweK9V44KTdnc5FmqjJHGvzv9oNVwPXh+569Mu
+        8YGCqM2iygfvemJvz9XqWavECf39ab3Wn7N3lhI6LxnWoGnJ3oLn5/+A/Rh/P2c3/C8v51uBArdr
+        3Z3o/Jd/nRP5oOKs1WWLdo0Le4p9dOVENv2uacyqWi/s03rXR7bzdTXfNf16dzgWJHX+FwAA//8D
+        AIH+cRmfBgAA
+    headers:
+      CF-RAY:
+      - 996ab516fcd2b9de-TXL
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 30 Oct 2025 11:52:36 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=8XUdfwR4HW0aBYsfGR7Lt2YAaaPYzKiPD1e87YC0CiY-1761825156-1.0.1.1-07SYtYo0fdqM2OQv9kHKqb2FR3zLC8rfYhip1IRPnHcuKJzKmcYsNYTpJ5yp1fC82xTzQPdMoUijkxRf74_0sBRAecTcsQiBsfCVjhtZmLY;
+        path=/; expires=Thu, 30-Oct-25 12:22:36 GMT; domain=.deepseek.com; HttpOnly;
+        Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      access-control-allow-credentials:
+      - 'true'
+      cf-cache-status:
+      - DYNAMIC
+      vary:
+      - origin, access-control-request-method, access-control-request-headers
+      x-ds-trace-id:
+      - 7c3af821d23b762893ad838cfa8ba9db
+    status:
+      code: 200
+      message: OK
+version: 1

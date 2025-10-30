@@ -1,0 +1,93 @@
+interactions:
+- request:
+    body: '{"messages":[{"role":"system","content":"You are a helpful assistant.\n\nYou
+      must respond with valid JSON matching this schema:\n{\n  \"$defs\": {\n    \"Company\":
+      {\n      \"properties\": {\n        \"company_name\": {\n          \"title\":
+      \"Company Name\",\n          \"type\": \"string\"\n        }\n      },\n      \"required\":
+      [\n        \"company_name\"\n      ],\n      \"title\": \"Company\",\n      \"type\":
+      \"object\"\n    }\n  },\n  \"properties\": {\n    \"name\": {\n      \"title\":
+      \"Name\",\n      \"type\": \"string\"\n    },\n    \"employer\": {\n      \"anyOf\":
+      [\n        {\n          \"$ref\": \"#/$defs/Company\"\n        },\n        {\n          \"type\":
+      \"null\"\n        }\n      ]\n    }\n  },\n  \"required\": [\n    \"name\",\n    \"employer\"\n  ],\n  \"title\":
+      \"Person\",\n  \"type\": \"object\"\n}"},{"role":"user","content":"Create a
+      person named Bob who works at TechCorp"}],"model":"deepseek-chat","max_tokens":8192,"response_format":{"type":"json_object"},"stream":false}'
+    headers:
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      content-length:
+      - '1014'
+      content-type:
+      - application/json
+      host:
+      - api.deepseek.com
+      user-agent:
+      - OpenAI/Python 1.65.5
+      x-stainless-arch:
+      - x64
+      x-stainless-async:
+      - 'false'
+      x-stainless-lang:
+      - python
+      x-stainless-os:
+      - Linux
+      x-stainless-package-version:
+      - 1.65.5
+      x-stainless-read-timeout:
+      - '600'
+      x-stainless-retry-count:
+      - '0'
+      x-stainless-runtime:
+      - CPython
+      x-stainless-runtime-version:
+      - 3.11.9
+    method: POST
+    uri: https://api.deepseek.com/beta/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAwAAAP//XJBBbtswEEWvIvw1FViMFSlctlfoLioImhxZrCUOQTJBDUN3D+Q0dpPt
+        vPdnBv8C76Bg7W4cm72pW2f7et92bW1cK+vuIJ+Mee4enXQQ4MMfsmXzJ1MeLC9xpuI5QMAmMoUc
+        VNM9Nb1sZSMFFnY0Q8ERxUx0qrfcJk/sLWWolwt8cPQXaiewUM7mSFAXJJ4JCiZnn4sJ1wyHQmE7
+        fhlCVVXVgGAWGqCqAT/4MEB8zmmJM58pbeyf/AG2j00463vwF9npJ6c44MNbh7BiFZj5GBMfMlR4
+        nWeB0QefJ53IZA5QyIUj1t8Cr58vx8RLLLrwiUKGknIvcG/oNn9sBAoXM9/NthVf09pRMX7O21pr
+        7ETuJjfPcr3ZV6YnX/7H3+jic74f38L5nAstevThSCkmf+10jHocbSf7xu17HRO7XS93eoy9Pr1d
+        N2F9BwAA//8DACu9A+ksAgAA
+    headers:
+      CF-RAY:
+      - 996ab6763e905053-TXL
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 30 Oct 2025 11:53:32 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=IMUGqtJfK1pYmwIeiYHUstz16MMf0Lk0tR8LSnEm.Fs-1761825212-1.0.1.1-xuJ2K6CId0Q1Jxn2.TnCbO_042_C.TSv_dByiupTlQs8ejSJbzeZR9HOWJ73ga1LnudzmMyzXJ.rhBr2xuaTjnyIXFNg4pg2MLHNKrQkheY;
+        path=/; expires=Thu, 30-Oct-25 12:23:32 GMT; domain=.deepseek.com; HttpOnly;
+        Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      access-control-allow-credentials:
+      - 'true'
+      cf-cache-status:
+      - DYNAMIC
+      vary:
+      - origin, access-control-request-method, access-control-request-headers
+      x-ds-trace-id:
+      - 3c2c6b3f90a2c06bada59bccc44b35cf
+    status:
+      code: 200
+      message: OK
+version: 1

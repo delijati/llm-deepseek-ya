@@ -1,0 +1,84 @@
+interactions:
+- request:
+    body: '{"messages":[{"role":"user","content":"Return a JSON object with keys:
+      name, color, and species for a parrot"}],"model":"deepseek-chat","max_tokens":8192,"response_format":{"type":"json_object"},"stream":false}'
+    headers:
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      content-length:
+      - '210'
+      content-type:
+      - application/json
+      host:
+      - api.deepseek.com
+      user-agent:
+      - OpenAI/Python 1.65.5
+      x-stainless-arch:
+      - x64
+      x-stainless-async:
+      - 'false'
+      x-stainless-lang:
+      - python
+      x-stainless-os:
+      - Linux
+      x-stainless-package-version:
+      - 1.65.5
+      x-stainless-read-timeout:
+      - '600'
+      x-stainless-retry-count:
+      - '0'
+      x-stainless-runtime:
+      - CPython
+      x-stainless-runtime-version:
+      - 3.11.9
+    method: POST
+    uri: https://api.deepseek.com/beta/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAwAAAP//XJDBbtswEER/RZgzVciKLMn8ityrgqDJlcWa4hIkEyQw9O+FHNhNe503
+        szPYG5yFRDfPx2Hs+vrcv7R11wxDrel8rE/9aZzbgx2Hlx4CfP5NpkDCLLr8MLxGT8VxgIBJpAtZ
+        yMPQH8b22IytwMqWPCQsUcxE13rP7eaFnaEM+fMGFyx9QDYCK+WsLwR5Q2JPkNA5u1x0uGc4FAp7
+        +W0KVVVVE4JeaYKsJryy958TxIMY9py+0CURhW8oRzKO8heMOiUuE6awYRPwfImJzxkyvHkvMLvg
+        8qIS6cwBErlwxPZL4O0xNCZeY1GFrxQyZNfsQx9vecrtSaBw0f6p9Cfxb1ZZKtr5vB812ixkn95m
+        e3rvRC3ub2PzH1tdzt/mbAL5Mxda1ezChVJM7v7DOap5NkM7Hmw3qpjYNmPbqDmO6vp+v4TtDwAA
+        AP//AwDqP8TlHAIAAA==
+    headers:
+      CF-RAY:
+      - 996ab349cca8e52e-TXL
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 30 Oct 2025 11:51:22 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=BbdU01p.XBwukIhC6cepCN.vVySBMCgKUdEka6ANbZM-1761825082-1.0.1.1-XfvcMxpPdbX6OKkvLFvSKX5U5BNh1X9KQxfep7VLLX1do97ZvllcdA2IjmvbqQukXKZT3Ywp.lIFgWSTeB7XId905leDpnaJGzyA1G3Twtw;
+        path=/; expires=Thu, 30-Oct-25 12:21:22 GMT; domain=.deepseek.com; HttpOnly;
+        Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      access-control-allow-credentials:
+      - 'true'
+      cf-cache-status:
+      - DYNAMIC
+      vary:
+      - origin, access-control-request-method, access-control-request-headers
+      x-ds-trace-id:
+      - c0b637df277b29fa5e3ea6b30c73229b
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -1,5 +1,5 @@
 import llm
-from llm.default_plugins.openai_models import Chat, Completion
+from llm.default_plugins.openai_models import Chat
 from pathlib import Path
 import json
 import time
@@ -13,6 +13,7 @@ CACHE_TIMEOUT = 3600
 DEEPSEEK_API_BASE = "https://api.deepseek.com/beta"  # For inference
 DEEPSEEK_MODELS_URL = "https://api.deepseek.com/models"  # For listing models
 
+
 def get_deepseek_models():
     """Fetch and cache DeepSeek models."""
     key = llm.get_key("", "deepseek", "LLM_DEEPSEEK_KEY")
@@ -21,18 +22,21 @@ def get_deepseek_models():
         url=DEEPSEEK_MODELS_URL,
         path=llm.user_dir() / "deepseek_models.json",
         cache_timeout=CACHE_TIMEOUT,
-        headers=headers
+        headers=headers,
     )["data"]
+
 
 def get_model_ids_with_aliases(models):
     """Extract model IDs and create empty aliases list."""
-    return [(model['id'], []) for model in models]
+    return [(model["id"], []) for model in models]
+
 
 class DeepSeekChat(Chat):
     needs_key = "deepseek"
     key_env_var = "LLM_DEEPSEEK_KEY"
 
     def __init__(self, model_id, **kwargs):
+        kwargs.setdefault("supports_schema", True)
         super().__init__(model_id, **kwargs)
         self.api_base = DEEPSEEK_API_BASE
 
@@ -42,15 +46,14 @@ class DeepSeekChat(Chat):
     class Options(Chat.Options):
         prefill: Optional[str] = Field(
             description="Initial text for the model's response (beta feature). Uses DeepSeek's Chat Prefix Completion.",
-            default=None
+            default=None,
         )
         response_format: Optional[str] = Field(
-            description="Format of the response (e.g., 'json_object').",
-            default=None
+            description="Format of the response (e.g., 'json_object').", default=None
         )
         show_reasoning: Optional[bool] = Field(
             description="Show the chain of thought reasoning for the DeepSeek Reasoner model.",
-            default=True
+            default=True,
         )
 
     def execute(self, prompt, stream, response, conversation, key=None):
@@ -58,13 +61,31 @@ class DeepSeekChat(Chat):
         response._prompt_json = {"messages": messages}
         kwargs = self.build_kwargs(prompt, stream)
 
-        max_tokens = kwargs.pop('max_tokens', 8192)
-        if prompt.options.response_format:
-            kwargs["response_format"] = {"type": prompt.options.response_format}
+        max_tokens = kwargs.pop("max_tokens", 8192)
+
+        # Enable JSON mode if schema is provided or response_format is set
+        if prompt.schema or prompt.options.response_format:
+            kwargs["response_format"] = {"type": "json_object"}
+
+            # If schema is provided, add it to the system message as guidance
+            # Note: DeepSeek doesn't validate against the schema, but the model can follow it
+            if prompt.schema:
+                schema_instruction = f"\n\nYou must respond with valid JSON matching this schema:\n{json.dumps(prompt.schema, indent=2)}"
+                # Add schema to system message or create one if it doesn't exist
+                if messages and messages[0].get("role") == "system":
+                    messages[0]["content"] += schema_instruction
+                else:
+                    messages.insert(
+                        0,
+                        {
+                            "role": "system",
+                            "content": f"You are a helpful assistant.{schema_instruction}",
+                        },
+                    )
 
         # Remove options that aren't supported by the OpenAI client
-        kwargs.pop('prefill', None)
-        kwargs.pop('show_reasoning', None)
+        kwargs.pop("prefill", None)
+        kwargs.pop("show_reasoning", None)
         show_reasoning = prompt.options.show_reasoning
 
         client = self.get_client(key)
@@ -82,18 +103,22 @@ class DeepSeekChat(Chat):
                 for chunk in completion:
                     # Stream both reasoning content and regular content directly
                     content = chunk.choices[0].delta.content
-                    reasoning_content = getattr(chunk.choices[0].delta, "reasoning_content", None)
-                    
+                    reasoning_content = getattr(
+                        chunk.choices[0].delta, "reasoning_content", None
+                    )
+
                     if reasoning_content is not None and show_reasoning:
                         yield reasoning_content
-                        
+
                     if content is not None:
                         yield content
             else:
                 # For non-streaming response
                 content = completion.choices[0].message.content
                 # If we have reasoning content and want to show it
-                if show_reasoning and hasattr(completion.choices[0].message, "reasoning_content"):
+                if show_reasoning and hasattr(
+                    completion.choices[0].message, "reasoning_content"
+                ):
                     reasoning = completion.choices[0].message.reasoning_content
                     if reasoning:
                         yield reasoning
@@ -102,11 +127,15 @@ class DeepSeekChat(Chat):
                 yield content
 
             response.response_json = {"content": "".join(response._chunks)}
-            
+
             # Store reasoning_content in response if available
-            if not stream and hasattr(completion.choices[0].message, "reasoning_content"):
-                response.response_json["reasoning_content"] = completion.choices[0].message.reasoning_content
-                
+            if not stream and hasattr(
+                completion.choices[0].message, "reasoning_content"
+            ):
+                response.response_json["reasoning_content"] = completion.choices[
+                    0
+                ].message.reasoning_content
+
         except httpx.HTTPError as e:
             raise llm.ModelError(f"DeepSeek API error: {str(e)}")
 
@@ -115,7 +144,9 @@ class DeepSeekChat(Chat):
         messages = []
         if conversation:
             for prev_response in conversation.responses:
-                messages.append({"role": "user", "content": prev_response.prompt.prompt})
+                messages.append(
+                    {"role": "user", "content": prev_response.prompt.prompt}
+                )
                 messages.append({"role": "assistant", "content": prev_response.text()})
 
         # Add system message if provided
@@ -129,103 +160,23 @@ class DeepSeekChat(Chat):
             # Check if prefill value is a file path
             if os.path.exists(prefill_content) and os.path.isfile(prefill_content):
                 try:
-                    with open(prefill_content, 'r') as file:
+                    with open(prefill_content, "r") as file:
                         prefill_content = file.read()
                 except Exception as e:
-                    print(f"Warning: Could not read prefill file '{prompt.options.prefill}': {e}")
-            
-            messages.append({
-                "role": "assistant",
-                "content": prefill_content,
-                "prefix": True
-            })
+                    print(
+                        f"Warning: Could not read prefill file '{prompt.options.prefill}': {e}"
+                    )
+
+            messages.append(
+                {"role": "assistant", "content": prefill_content, "prefix": True}
+            )
 
         return messages
 
-class DeepSeekCompletion(Completion):
-    needs_key = "deepseek"
-    key_env_var = "LLM_DEEPSEEK_KEY"
-
-    def __init__(self, model_id, **kwargs):
-        super().__init__(model_id, **kwargs)
-        self.api_base = DEEPSEEK_API_BASE
-
-    def __str__(self):
-        return f"DeepSeek Completion: {self.model_id}"
-
-    class Options(Completion.Options):
-        prefill: Optional[str] = Field(
-            description="Initial text for the model's response (beta feature). Uses DeepSeek's Completion Prefix.",
-            default=None
-        )
-        echo: Optional[bool] = Field(
-            description="Echo back the prompt in addition to the completion.",
-            default=None
-        )
-
-    def execute(self, prompt, stream, response, conversation, key=None):
-        full_prompt = self._build_full_prompt(conversation, prompt)
-        response._prompt_json = {"prompt": full_prompt}
-        kwargs = self.build_kwargs(prompt, stream)
-
-        max_tokens = kwargs.pop('max_tokens', 4096)
-        if prompt.options.echo:
-            kwargs["echo"] = prompt.options.echo
-
-        # Remove custom options from kwargs
-        kwargs.pop('prefill', None)
-        kwargs.pop('show_reasoning', None)  # Remove if it exists
-
-        client = self.get_client(key)
-
-        try:
-            completion = client.completions.create(
-                model=self.model_name,
-                prompt=full_prompt,
-                stream=stream,
-                max_tokens=max_tokens,
-                **kwargs,
-            )
-
-            for chunk in completion:
-                text = chunk.choices[0].text
-                if text:
-                    yield text
-
-            response.response_json = {"content": "".join(response._chunks)}
-        except httpx.HTTPError as e:
-            raise llm.ModelError(f"DeepSeek API error: {str(e)}")
-
-    def _build_full_prompt(self, conversation, prompt):
-        """Build the full prompt for the API call."""
-        messages = []
-        if conversation:
-            for prev_response in conversation.responses:
-                messages.append(prev_response.prompt.prompt)
-                messages.append(prev_response.text())
-        messages.append(prompt.prompt)
-
-        # Include system message if provided
-        if prompt.system:
-            messages.insert(0, prompt.system)
-
-        full_prompt = "\n".join(messages)
-        if prompt.options.prefill:
-            prefill_content = prompt.options.prefill
-            # Check if prefill value is a file path
-            if os.path.exists(prefill_content) and os.path.isfile(prefill_content):
-                try:
-                    with open(prefill_content, 'r') as file:
-                        prefill_content = file.read()
-                except Exception as e:
-                    print(f"Warning: Could not read prefill file '{prompt.options.prefill}': {e}")
-            
-            full_prompt += f"\n{prefill_content}"
-
-        return full_prompt
 
 class DownloadError(Exception):
     pass
+
 
 def fetch_cached_json(url, path, cache_timeout, headers=None):
     """Fetch JSON data from a URL and cache it."""
@@ -247,7 +198,10 @@ def fetch_cached_json(url, path, cache_timeout, headers=None):
             with open(path, "r") as file:
                 return json.load(file)
         else:
-            raise DownloadError(f"Failed to download data and no cache is available at {path}")
+            raise DownloadError(
+                f"Failed to download data and no cache is available at {path}"
+            )
+
 
 @llm.hookimpl
 def register_models(register):
@@ -257,29 +211,19 @@ def register_models(register):
     try:
         models = get_deepseek_models()
         models_with_aliases = get_model_ids_with_aliases(models)
-        
-        # First register all Chat models
+
+        # Register all Chat models
         for model_id, aliases in models_with_aliases:
             register(
                 DeepSeekChat(
-                    model_id=f"deepseekchat/{model_id}",
+                    model_id=f"deepseek/{model_id}",
                     model_name=model_id,
                 ),
-                aliases=[model_id]
+                aliases=[model_id],
             )
-        
-        # Then register Completion models (excluding reasoner)
-        for model_id, aliases in models_with_aliases:
-            if "reasoner" not in model_id.lower():
-                register(
-                    DeepSeekCompletion(
-                        model_id=f"deepseekcompletion/{model_id}",
-                        model_name=model_id,
-                    ),
-                    aliases=[f"{model_id}-completion"]
-                )
     except DownloadError as e:
         print(f"Error fetching DeepSeek models: {e}")
+
 
 @llm.hookimpl
 def register_commands(cli):
@@ -293,19 +237,11 @@ def register_commands(cli):
         try:
             models = get_deepseek_models()
             models_with_aliases = get_model_ids_with_aliases(models)
-            
-            # First display all Chat models
+
+            # Display all Chat models
             for model_id, aliases in models_with_aliases:
-                print(f"DeepSeek Chat: deepseekchat/{model_id}")
+                print(f"DeepSeek Chat: deepseek/{model_id}")
                 print(f"  Aliases: {model_id}")
                 print()
-            
-            # Then display all Completion models (excluding reasoner)
-            for model_id, aliases in models_with_aliases:
-                if "reasoner" not in model_id.lower():
-                    print(f"DeepSeek Completion: deepseekcompletion/{model_id}")
-                    print(f"  Aliases: {model_id}-completion")
-                    print()
         except DownloadError as e:
             print(f"Error fetching DeepSeek models: {e}")
-

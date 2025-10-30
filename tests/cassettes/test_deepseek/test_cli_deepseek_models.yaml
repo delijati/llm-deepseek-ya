@@ -1,0 +1,56 @@
+interactions:
+- request:
+    body: ''
+    headers:
+      accept:
+      - '*/*'
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      host:
+      - api.deepseek.com
+      user-agent:
+      - python-httpx/0.28.1
+    method: GET
+    uri: https://api.deepseek.com/models
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA6pWyk/KSk0uUbJSysksLlHSUUpJLElUsoquVspMUbJSSklNLShOTc3WTc5IBMnC
+        Vefmp6TmgATK81JT4pMqkdQq1eqg6y5KTSzOz0stItqE2FoAAAAA//8DABrxs0qaAAAA
+    headers:
+      CF-RAY:
+      - 996ab6ab8863e52f-TXL
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 30 Oct 2025 11:53:40 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=FfkDCXXSgpD.IN0z2IBkssAkoUfflExzfBaeA5eFXTQ-1761825220-1.0.1.1-X.nkSQwbxlsRkuSF87BKGDIzcPtNK_5YcN0OgVu.rg9TMc_Ew9.aHu2YJAIgYfYFiWJxu.Qp_gYWk.990q.Z9XgzG5wQqKCCIPMNi4DdAf0;
+        path=/; expires=Thu, 30-Oct-25 12:23:40 GMT; domain=.deepseek.com; HttpOnly;
+        Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      access-control-allow-credentials:
+      - 'true'
+      cf-cache-status:
+      - DYNAMIC
+      vary:
+      - origin, access-control-request-method, access-control-request-headers
+      x-ds-trace-id:
+      - bc5921ff1956759cd678a0c595e74694
+    status:
+      code: 200
+      message: OK
+version: 1

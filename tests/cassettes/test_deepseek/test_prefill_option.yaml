@@ -1,0 +1,118 @@
+interactions:
+- request:
+    body: '{"messages":[{"role":"user","content":"Continue this story"},{"role":"assistant","content":"Once
+      upon a time","prefix":true}],"model":"deepseek-chat","max_tokens":8192,"stream":false}'
+    headers:
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      content-length:
+      - '183'
+      content-type:
+      - application/json
+      host:
+      - api.deepseek.com
+      user-agent:
+      - OpenAI/Python 1.65.5
+      x-stainless-arch:
+      - x64
+      x-stainless-async:
+      - 'false'
+      x-stainless-lang:
+      - python
+      x-stainless-os:
+      - Linux
+      x-stainless-package-version:
+      - 1.65.5
+      x-stainless-read-timeout:
+      - '600'
+      x-stainless-retry-count:
+      - '0'
+      x-stainless-runtime:
+      - CPython
+      x-stainless-runtime-version:
+      - 3.11.9
+    method: POST
+    uri: https://api.deepseek.com/beta/chat/completions
+  response:
+    body:
+      string: !!binary |
+        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
+        9X8AAAD//wMAYgjAIaQSAAA=
+    headers:
+      CF-RAY:
+      - 996ab5607d44e532-TXL
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 30 Oct 2025 11:52:47 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=u27rvQa60aFxRdQXyNruz3VBntpSnPCYm_2p8EsSXI4-1761825167-1.0.1.1-uJQGrJF5Yzp4islflxmyRNWlvFZn49JGCdf5xiHKHFsTOuGd8avRuXARyWpeM.0xIboIDaY9cHojBk._BOkZeaAwYNGQSsGCT_a.nsIiqIY;
+        path=/; expires=Thu, 30-Oct-25 12:22:47 GMT; domain=.deepseek.com; HttpOnly;
+        Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      access-control-allow-credentials:
+      - 'true'
+      cf-cache-status:
+      - DYNAMIC
+      vary:
+      - origin, access-control-request-method, access-control-request-headers
+      x-ds-trace-id:
+      - 9591a75b2a9b8d19c42beaf4bc5552ad
+    status:
+      code: 200
+      message: OK
+version: 1

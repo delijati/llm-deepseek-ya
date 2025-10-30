@@ -1,0 +1,92 @@
+interactions:
+- request:
+    body: '{"messages":[{"role":"system","content":"You are a helpful assistant.\n\nYou
+      must respond with valid JSON matching this schema:\n{\n  \"$defs\": {\n    \"Address\":
+      {\n      \"properties\": {\n        \"street\": {\n          \"title\": \"Street\",\n          \"type\":
+      \"string\"\n        },\n        \"city\": {\n          \"title\": \"City\",\n          \"type\":
+      \"string\"\n        }\n      },\n      \"required\": [\n        \"street\",\n        \"city\"\n      ],\n      \"title\":
+      \"Address\",\n      \"type\": \"object\"\n    }\n  },\n  \"properties\": {\n    \"name\":
+      {\n      \"title\": \"Name\",\n      \"type\": \"string\"\n    },\n    \"address\":
+      {\n      \"$ref\": \"#/$defs/Address\"\n    }\n  },\n  \"required\": [\n    \"name\",\n    \"address\"\n  ],\n  \"title\":
+      \"Person\",\n  \"type\": \"object\"\n}"},{"role":"user","content":"Create a
+      person named Alice living in San Francisco"}],"model":"deepseek-chat","max_tokens":8192,"response_format":{"type":"json_object"},"stream":false}'
+    headers:
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      content-length:
+      - '1006'
+      content-type:
+      - application/json
+      host:
+      - api.deepseek.com
+      user-agent:
+      - OpenAI/Python 1.65.5
+      x-stainless-arch:
+      - x64
+      x-stainless-async:
+      - 'false'
+      x-stainless-lang:
+      - python
+      x-stainless-os:
+      - Linux
+      x-stainless-package-version:
+      - 1.65.5
+      x-stainless-read-timeout:
+      - '600'
+      x-stainless-retry-count:
+      - '0'
+      x-stainless-runtime:
+      - CPython
+      x-stainless-runtime-version:
+      - 3.11.9
+    method: POST
+    uri: https://api.deepseek.com/beta/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAwAAAP//XJDBrtMwEEV/pbprBzlp0yTeseEHECuCIteeNKaJbXn8gKcq/46S8vqA
+        7T3nzmjmDmehcGyMtZ28FPJUn4uTlKbQUh8L2VBXynEs63MNgXD5TiZDwUw6fzBhiTNlFzwETCKd
+        yUKVzblsq7qSncASLM1QsESRiW7F1tvkKThDDPX1Duct/YKSAgsx6ytB3ZHCTFDQzI6z9nsn+Ex+
+        W37v/eHQw+uFeqhDj4+zM9RDPHJtbSLmDe3mlnFORPlhf/E3H376P/5GjcuvD/ZZ+8OnpL1xbEKP
+        TVh7v2IVmMM1pnBhKP8yzwKj846nIZHm4KHAOUSs3wRe3o6IKSwxDzncyDNUVXbbFW8/e+bHUiCH
+        rOd3s5bi3/ZgKWs38zbWaDORfcplV61Pe2fD5PLf+D+6OOb3Vc0qwK+caRlG56+UYnL7l8c4jKNp
+        qra0p3aIKVjZVnIYYzvcfuyTsP4GAAD//wMAu2er5z4CAAA=
+    headers:
+      CF-RAY:
+      - 996ab6662e7b33a5-TXL
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 30 Oct 2025 11:53:29 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=Zf5TCfJOWUhfMd_0yvhtfhhny4si.N2EaKzslhvzQaQ-1761825209-1.0.1.1-.1wZu2vVtRroG7B3bqeQkuYIvLHQXw1OcnE0IiBoXrVyrrFTjT7Rl70WdRt4pyDSBCP3uVQW5DeXVc_xXsK_V1H84.LctBwe5AafffHYjKc;
+        path=/; expires=Thu, 30-Oct-25 12:23:29 GMT; domain=.deepseek.com; HttpOnly;
+        Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      access-control-allow-credentials:
+      - 'true'
+      cf-cache-status:
+      - DYNAMIC
+      vary:
+      - origin, access-control-request-method, access-control-request-headers
+      x-ds-trace-id:
+      - 87a9000658f34c8ee039ecea229023ef
+    status:
+      code: 200
+      message: OK
+version: 1

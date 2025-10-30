@@ -1,0 +1,91 @@
+interactions:
+- request:
+    body: '{"messages":[{"role":"system","content":"You are a helpful assistant.\n\nYou
+      must respond with valid JSON matching this schema:\n{\n  \"properties\": {\n    \"name\":
+      {\n      \"title\": \"Name\",\n      \"type\": \"string\"\n    },\n    \"age\":
+      {\n      \"title\": \"Age\",\n      \"type\": \"integer\"\n    },\n    \"bio\":
+      {\n      \"title\": \"Bio\",\n      \"type\": \"string\"\n    }\n  },\n  \"required\":
+      [\n    \"name\",\n    \"age\",\n    \"bio\"\n  ],\n  \"title\": \"Dog\",\n  \"type\":
+      \"object\"\n}"},{"role":"user","content":"Invent a cool dog"}],"model":"deepseek-chat","max_tokens":8192,"response_format":{"type":"json_object"},"stream":false}'
+    headers:
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      content-length:
+      - '661'
+      content-type:
+      - application/json
+      host:
+      - api.deepseek.com
+      user-agent:
+      - OpenAI/Python 1.65.5
+      x-stainless-arch:
+      - x64
+      x-stainless-async:
+      - 'false'
+      x-stainless-lang:
+      - python
+      x-stainless-os:
+      - Linux
+      x-stainless-package-version:
+      - 1.65.5
+      x-stainless-read-timeout:
+      - '600'
+      x-stainless-retry-count:
+      - '0'
+      x-stainless-runtime:
+      - CPython
+      x-stainless-runtime-version:
+      - 3.11.9
+    method: POST
+    uri: https://api.deepseek.com/beta/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAwAAAP//XJLBctswDER/BYMznbFUJZZ1bI/9g1YdDUxCEiqKZEnKiePxv3ekNk7a
+        I/ftLmYAXlEMNvhY1ad+X33a8ZFpVxWPekf1sd5R/1TXp33FZXFEhf70k3XGBvVI+UH7OVjO4h0q
+        1JEps8GmODwVdfm4f6oVzt6wxQYNc0jM027NrebRi+aEzfcrijP8gs1e4cwp0cDYXDF6y9ggpSQp
+        k9sy3mV26/Br6wBadDRziw20+I3DeIktqj+Ahk2v/j5P4j/aQBIQjDKMO3Ychwt89tFwhC/eWmGY
+        5QWeJY9AkCzzBCdLegJyBp5HyQzaU36Ar84/O+h9BBrESr5sDnGZrZWBnWYFI4P1Z06QvD2LGyAs
+        r6+W00qiWYX0a5EY2SYQB3lkCBQntVXpxRi7epYA1GeOQGC9G8DQBXwPZM7s8hI5PbTYuhveFFo/
+        hOhPCRu3WKuwFydp7CJT8g4bTNkHvP1QuLwtOkQ/h9xlP7FL2BTVcd30213v+qFUmH0me1fKslD/
+        pjvDmcSmtVaTHtm815b17e7eWDdK/oj/o7Ok9D6quClMl5R57npxA8cQZfsJfej6Xh/KujBV3YXo
+        zb4u910f6m46b014+w0AAP//AwDy8enb4gIAAA==
+    headers:
+      CF-RAY:
+      - 996ab2f6bb61da39-TXL
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 30 Oct 2025 11:51:09 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=IMN4Oi9dCeO5hrMq2vP.yF3V.9a0r9twWPeyTRIHRfs-1761825069-1.0.1.1-uMP1FHJHAmuACZIhJdQ4iRhTWWWC9ENN7HccAIcq3gFLc2aT1tt9ME_voz5CQ_pPjyF_HG8BgqIHgPOAMh3q4JfXuKR.8TynRQPo51FpsUQ;
+        path=/; expires=Thu, 30-Oct-25 12:21:09 GMT; domain=.deepseek.com; HttpOnly;
+        Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      access-control-allow-credentials:
+      - 'true'
+      cf-cache-status:
+      - DYNAMIC
+      vary:
+      - origin, access-control-request-method, access-control-request-headers
+      x-ds-trace-id:
+      - 86587bc9342dc890965b8784d222cb15
+    status:
+      code: 200
+      message: OK
+version: 1

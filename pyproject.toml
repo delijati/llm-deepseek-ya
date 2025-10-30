@@ -1,25 +1,44 @@
 [project]
-name = "llm-deepseek-xtreme"
-version = "0.1.0"
-description = "LLM access to DeepSeek's API"
+name = "llm-deepseek-ya"
+version = "1.0.0"
+description = "Yet another LLM access to DeepSeek's API"
 readme = "README.md"
-license = { file = "LICENSE" }
-classifiers = ["License :: OSI Approved :: Apache Software License"]
-requires-python = ">=3.8"
+license = "MIT"
+requires-python = ">=3.11"
 dependencies = ["llm", "httpx"]
-authors = [{ name = "Nick Mystic" }]
+authors = [{ name = "Josip Delic" }]
 
 [project.urls]
-Homepage = "https://github.com/ghostofpokemon/llm-deepseek"
-Changelog = "https://github.com/ghostofpokemon/llm-deepseek/blob/main/CHANGELOG.md"
-Issues = "https://github.com/ghostofpokemon/llm-deepseek/issues"
-CI = "https://github.com/ghostofpokemon/llm-deepseek/actions"
+Homepage = "https://github.com/delijati/llm-deepseek"
+Issues = "https://github.com/delijati/llm-deepseek/issues"
+CI = "https://github.com/delijati/llm-deepseek/actions"
 
 [project.entry-points.llm]
 deepseek = "llm_deepseek"
 
 [project.optional-dependencies]
-test = ["pytest", "pytest-httpx"]
+test = ["pytest", "pytest-httpx", "pytest-recording"]
+dev = ["ruff"]
 
 [tool.pytest.ini_options]
 filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.setuptools]
+py-modules = ["llm_deepseek"]
+
+[tool.ruff]
+# Same as flake8 max-line-length
+line-length = 88
+
+[tool.ruff.lint]
+# E501 - line too long (handled by formatter)
+# E203 - whitespace before ':' (conflicts with black)
+ignore = ["E501", "E203"]
+
+# Enable pycodestyle (E, W), pyflakes (F), and mccabe (C) rules
+select = ["E", "W", "F", "C90"]
+
+[tool.ruff.lint.mccabe]
+# Equivalent to flake8's max-complexity
+max-complexity = 15
+

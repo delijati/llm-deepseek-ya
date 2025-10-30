@@ -1,8 +1,8 @@
 # llm-deepseek
 
-[![PyPI](https://img.shields.io/pypi/v/llm-hyperbolic.svg)](https://pypi.org/project/llm-deepseek-xtreme/0.1.0/)
-[![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/ghostofpokemon/llm-deepseek?include_prereleases)](https://github.com/ghostofpokemon/llm-deepseek/releases)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ghostofpokemon/llm-deepseek/blob/main/LICENSE)
+[![PyPI](https://img.shields.io/pypi/v/llm-hyperbolic.svg)](https://pypi.org/project/llm-deepseek-ya/0.1.0/)
+[![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/delijati/llm-deepseek?include_prereleases)](https://github.com/delijati/llm-deepseek/releases)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/delijati/llm-deepseek/blob/main/LICENSE)
 
 LLM access to DeepSeek's API
 
@@ -11,7 +11,7 @@ LLM access to DeepSeek's API
 Install this plugin in the same environment as [LLM](https://llm.datasette.io/).
 
 ```bash
-llm install llm-deepseek-xtreme
+llm install llm-deepseek-ya
 ```
 
 ## Usage
@@ -51,7 +51,7 @@ llm -m deepseek-reasoner "What is 537 * 943?"
 llm -m deepseek-reasoner "What is 537 * 943?" -o show_reasoning false
 ```
 
-### New Features
+### Features
 
 #### Prefill
 
@@ -89,6 +89,39 @@ To guide the model further, you can provide an example JSON structure:
 
 ```bash
 llm -m deepseek-chat "What are some way to tell if a holiday party is fun?" -o response_format json_object --system 'EXAMPLE JSON OUTPUT: {"event": "holiday_party_fun", "success_metric": ["..."]}'
+```
+
+#### JSON Schema Support
+
+DeepSeek Chat models support JSON schema output (via LLM's `--schema` option). When you provide a schema, the plugin automatically enables JSON mode and includes the schema in the system message to guide the model's output.
+
+**Important Note:** DeepSeek's API does not validate the output against the schema - it only uses JSON mode. The schema is provided to the model as guidance, so the model will attempt to follow it, but strict validation is not enforced.
+
+Example:
+
+```bash
+llm -m deepseek-chat "Generate a user profile" --schema '{"type": "object", "properties": {"name": {"type": "string"}, "age": {"type": "number"}, "email": {"type": "string"}}, "required": ["name", "age"]}'
+```
+
+You can also use LLM's schema file support:
+
+```bash
+# Create a schema file
+cat > user_schema.json << 'EOF'
+{
+  "type": "object",
+  "properties": {
+    "name": {"type": "string"},
+    "age": {"type": "number"},
+    "email": {"type": "string"},
+    "interests": {"type": "array", "items": {"type": "string"}}
+  },
+  "required": ["name", "age"]
+}
+EOF
+
+# Use the schema file
+llm -m deepseek-chat "Generate a user profile for a software developer" --schema user_schema.json
 ```
 
 ## Development

@@ -1,0 +1,99 @@
+interactions:
+- request:
+    body: '{"messages":[{"role":"system","content":"You are a helpful assistant.\n\nYou
+      must respond with valid JSON matching this schema:\n{\n  \"$defs\": {\n    \"Dog\":
+      {\n      \"properties\": {\n        \"name\": {\n          \"title\": \"Name\",\n          \"type\":
+      \"string\"\n        },\n        \"age\": {\n          \"title\": \"Age\",\n          \"type\":
+      \"integer\"\n        },\n        \"bio\": {\n          \"title\": \"Bio\",\n          \"type\":
+      \"string\"\n        }\n      },\n      \"required\": [\n        \"name\",\n        \"age\",\n        \"bio\"\n      ],\n      \"title\":
+      \"Dog\",\n      \"type\": \"object\"\n    }\n  },\n  \"properties\": {\n    \"dogs\":
+      {\n      \"items\": {\n        \"$ref\": \"#/$defs/Dog\"\n      },\n      \"title\":
+      \"Dogs\",\n      \"type\": \"array\"\n    }\n  },\n  \"required\": [\n    \"dogs\"\n  ],\n  \"title\":
+      \"Dogs\",\n  \"type\": \"object\"\n}"},{"role":"user","content":"Invent 3 cool
+      dogs"}],"model":"deepseek-chat","max_tokens":8192,"response_format":{"type":"json_object"},"stream":false}'
+    headers:
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      content-length:
+      - '1049'
+      content-type:
+      - application/json
+      host:
+      - api.deepseek.com
+      user-agent:
+      - OpenAI/Python 1.65.5
+      x-stainless-arch:
+      - x64
+      x-stainless-async:
+      - 'false'
+      x-stainless-lang:
+      - python
+      x-stainless-os:
+      - Linux
+      x-stainless-package-version:
+      - 1.65.5
+      x-stainless-read-timeout:
+      - '600'
+      x-stainless-retry-count:
+      - '0'
+      x-stainless-runtime:
+      - CPython
+      x-stainless-runtime-version:
+      - 3.11.9
+    method: POST
+    uri: https://api.deepseek.com/beta/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAwAAAP//nFTLrttGDP0VgptuZMOve62rXdpFV+2qq8aBQWsoiVcjUpgZ21cxDOQj
+        8oX5kkLyfSQpEhSdFUGewzk84MwFxWGB1aLcPqyq9WxD+XK2IapmudvezfJ1vl48lNVms1pjhnZ4
+        5DJhgWVDaV5a13tOYooZloEpscNiub1f5qu7xXaVYWeOPRbomPvI3M5G3ghuTEqOWLy/oKjjJywW
+        GXYcI9WMxQWDecYCKUaJiXTimCbW8fLLTgEAduisjjss4P0tMZ7LW3jDKHU8Ynb4N/fNEHaYfQ+h
+        ekKs/1U4iN2o7yB65jaDKP7EYVbaOCv8Hnho7KgOOnmCs6QGCLydGCoL0EjdzGLP7KBsKHIEUgdK
+        fS9agyjEox6YujiHmzSQCK3aWZ/pEWrW5Bkcd0xqYWogWgZ2cvAMVIuXNMx3+Kb8mv0nM/60E/3Y
+        irufWXEI4r2QJvjVguMAv5n3wrf5G04crGyCdUJfPn02ZTj4IwMPPMmfEsHO+uXTZ34q2ftnN/rj
+        x4+eZ9H8acyM2IaDG+OaOo5zGDX/EkE0jayatby1ZOVQD9BRyyMFUsMQEwWwCkgHcFZDT6H9Pz79
+        JYn0x0ZtfmZUR48ck5TwzlNsSeEP8tQdE7+sSmqkbDM4m69mXlqGca+mkQh6T0N19Bl4G8hD7CVI
+        msOkB1gfbYgQ1c4DkDuxpmN4XjCJQBDYC40rMr5RUjEFU2ikHe1MgcTHb924hR92esVrht7qPtgh
+        YqFH7zOsRCU2+8AUTbHAmKzH64cMjy8Ptg/W9WmfrGWNWKzW+fhiX/6H1/zyIc8wWSL/mtqs77Nv
+        6XvHaVQ49i2pbNh9xV9dX9FTbd9I+rr8XbWTGN+uur9mGIeYuNtXojWHPsj0pVT9vqrK7Spfuk2+
+        74O5Rb5a7Ks+37enqRNe/wEAAP//AwAXg0uNKwUAAA==
+    headers:
+      CF-RAY:
+      - 996ab3111c395053-TXL
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 30 Oct 2025 11:51:13 GMT
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=Op2gnG8mk7jJM7Li0azCV1wtb5Yxa2MoFhh_TLdcOms-1761825073-1.0.1.1-e_0zHVgk5oEdHtRXGxYox0lQyhbaLTupV5J332.dRue5ite9kd_nXZXUcM6xALoqNmyx1AusEvjWdqlbsidr2X4deBxZD9P.JOGTxaPLh2w;
+        path=/; expires=Thu, 30-Oct-25 12:21:13 GMT; domain=.deepseek.com; HttpOnly;
+        Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      access-control-allow-credentials:
+      - 'true'
+      cf-cache-status:
+      - DYNAMIC
+      vary:
+      - origin, access-control-request-method, access-control-request-headers
+      x-ds-trace-id:
+      - e7bb5fee3fbf29aa0944d9ddbd4e597e
+    status:
+      code: 200
+      message: OK
+version: 1
