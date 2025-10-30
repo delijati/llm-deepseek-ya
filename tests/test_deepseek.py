@@ -231,9 +231,20 @@ def test_nested_model_deep_composition():
 @pytest.mark.vcr
 def test_cli_deepseek_models(tmpdir, monkeypatch):
     """Test the deepseek-models CLI command"""
+    import llm_deepseek
+
     user_dir = tmpdir / "llm.datasette.io"
     user_dir.mkdir()
     monkeypatch.setenv("LLM_USER_PATH", str(user_dir))
+
+    # Mock get_deepseek_models to return a fixed list (no API key needed in CI)
+    def mock_get_deepseek_models():
+        return [
+            {"id": "deepseek-chat", "object": "model", "owned_by": "deepseek"},
+            {"id": "deepseek-reasoner", "object": "model", "owned_by": "deepseek"},
+        ]
+
+    monkeypatch.setattr(llm_deepseek, "get_deepseek_models", mock_get_deepseek_models)
 
     # With no key set should show error message
     runner = CliRunner()

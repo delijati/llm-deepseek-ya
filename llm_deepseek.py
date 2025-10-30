@@ -18,12 +18,13 @@ def get_deepseek_models():
     """Fetch and cache DeepSeek models."""
     key = llm.get_key("", "deepseek", "LLM_DEEPSEEK_KEY")
     headers = {"Authorization": f"Bearer {key}"} if key else None
-    return fetch_cached_json(
+    ret = fetch_cached_json(
         url=DEEPSEEK_MODELS_URL,
         path=llm.user_dir() / "deepseek_models.json",
         cache_timeout=CACHE_TIMEOUT,
         headers=headers,
     )["data"]
+    return ret
 
 
 def get_model_ids_with_aliases(models):
