@@ -9,9 +9,9 @@ dependencies = ["llm", "httpx"]
 authors = [{ name = "Josip Delic" }]
 
 [project.urls]
-Homepage = "https://github.com/delijati/llm-deepseek"
-Issues = "https://github.com/delijati/llm-deepseek/issues"
-CI = "https://github.com/delijati/llm-deepseek/actions"
+Homepage = "https://github.com/delijati/llm-deepseek-ya"
+Issues = "https://github.com/delijati/llm-deepseek-ya/issues"
+CI = "https://github.com/delijati/llm-deepseek-ya/actions"
 
 [project.entry-points.llm]
 deepseek = "llm_deepseek"

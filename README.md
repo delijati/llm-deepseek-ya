@@ -1,8 +1,8 @@
 # llm-deepseek
 
-[![PyPI](https://img.shields.io/pypi/v/llm-hyperbolic.svg)](https://pypi.org/project/llm-deepseek-ya/0.1.0/)
-[![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/delijati/llm-deepseek?include_prereleases)](https://github.com/delijati/llm-deepseek/releases)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/delijati/llm-deepseek/blob/main/LICENSE)
+[![PyPI](https://img.shields.io/pypi/v/llm-deepseek-ya.svg)](https://pypi.org/project/llm-deepseek-ya/0.1.0/)
+[![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/delijati/llm-deepseek-ya?include_prereleases)](https://github.com/delijati/llm-deepseek-ya/releases)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/delijati/llm-deepseek-ya/blob/main/LICENSE)
 
 LLM access to DeepSeek's API
 
@@ -129,7 +129,7 @@ llm -m deepseek-chat "Generate a user profile for a software developer" --schema
 To set up this plugin locally, first checkout the code. Then create a new virtual environment:
 
 ```bash
-cd llm-deepseek
+cd llm-deepseek-ya
 python3 -m venv venv
 source venv/bin/activate
 ```
