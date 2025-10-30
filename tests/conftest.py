@@ -1,4 +1,5 @@
 import pytest
+import os
 
 
 @pytest.fixture(scope="module")
@@ -16,6 +17,12 @@ def vcr_config():
 def mock_deepseek_models(monkeypatch):
     """Mock get_deepseek_models to avoid API calls during tests (especially in CI)"""
     import llm_deepseek
+
+    # Set a dummy API key so register_models doesn't exit early
+    monkeypatch.setenv(
+        "LLM_DEEPSEEK_KEY",
+        os.environ.get("PYTEST_DEEPSEEK_API_KEY", "sk-dummy-key-for-testing"),
+    )
 
     def mock_get_deepseek_models():
         return [
