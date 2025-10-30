@@ -1,4 +1,4 @@
-# llm-deepseek
+# llm-deepseek-ya
 
 [![PyPI](https://img.shields.io/pypi/v/llm-deepseek-ya.svg)](https://pypi.org/project/llm-deepseek-ya/0.1.0/)
 [![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/delijati/llm-deepseek-ya?include_prereleases)](https://github.com/delijati/llm-deepseek-ya/releases)
