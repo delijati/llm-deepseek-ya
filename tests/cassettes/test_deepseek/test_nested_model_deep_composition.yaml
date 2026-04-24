@@ -15,56 +15,59 @@ interactions:
       {\n        \"$ref\": \"#/$defs/Order\"\n      },\n      \"title\": \"Orders\",\n      \"type\":
       \"array\"\n    }\n  },\n  \"required\": [\n    \"name\",\n    \"orders\"\n  ],\n  \"title\":
       \"Customer\",\n  \"type\": \"object\"\n}"},{"role":"user","content":"Create
-      a customer named Carol with 2 orders, each containing 2 items"}],"model":"deepseek-chat","max_tokens":8192,"response_format":{"type":"json_object"},"stream":false}'
+      a customer named Carol with 2 orders, each containing 2 items"}],"model":"deepseek-v4-flash","max_tokens":8192,"response_format":{"type":"json_object"},"stream":false}'
     headers:
-      accept:
+      Accept:
       - application/json
-      accept-encoding:
+      Accept-Encoding:
       - gzip, deflate
-      connection:
+      Connection:
       - keep-alive
-      content-length:
-      - '1480'
-      content-type:
+      Content-Length:
+      - '1484'
+      Content-Type:
       - application/json
-      host:
+      Host:
       - api.deepseek.com
-      user-agent:
-      - OpenAI/Python 1.65.5
-      x-stainless-arch:
+      User-Agent:
+      - OpenAI/Python 2.32.0
+      X-Stainless-Arch:
       - x64
-      x-stainless-async:
+      X-Stainless-Async:
       - 'false'
-      x-stainless-lang:
+      X-Stainless-Lang:
       - python
-      x-stainless-os:
+      X-Stainless-OS:
       - Linux
-      x-stainless-package-version:
-      - 1.65.5
+      X-Stainless-Package-Version:
+      - 2.32.0
+      X-Stainless-Runtime:
+      - CPython
+      X-Stainless-Runtime-Version:
+      - 3.14.3
       x-stainless-read-timeout:
       - '600'
       x-stainless-retry-count:
       - '0'
-      x-stainless-runtime:
-      - CPython
-      x-stainless-runtime-version:
-      - 3.11.9
     method: POST
     uri: https://api.deepseek.com/beta/chat/completions
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAAwAAAP//tFPbjpswEP0VNM+mAgOB+HV/YN+XyHLsIbgB27WdqivEv69IFJK9VEql
-        rp/sc5k5Hmkm0AoY5GUl6Lbs0rors7Sstpg2RVGkm6LJt1u531S0AwJ2/xNlBAayF/GHtKMbMGpr
-        gID0KCIqYHm9yRta0bwkMFqFAzBQiC4gHtPFt4h7qyUGYC8TaKPwD7CMwIghiAMCm8DbAYGBCEGH
-        KMzZY01EszSfWpMkSdKCESO2wJIWnoS3Qwvkyliv0IeFe7lAy5lu14tKRxw/iv4ivpmct+okI781
-        f74gSb4G+Oz6dRIm6vi6OPLPopn8lwT0wQT0iwTvod3teZ/tu0dYPPiB4ttGWD6YoPynEV6uu9bM
-        MBMY7MF5uw/AzGkYCHTa6NBzjyJYAwxCtA7mHYHTdR+ct6OLPNojmgCsoPWyENf1W/GcbghEG8Ww
-        QmVVkPd2rjAKPYSlrhSyR3VXN5tX9Znjvb5vm31gRx3CStczgfAaIo680+aA3nl9XtjO8a6TNW1y
-        VTZ8mX3W0Ix3ruHH3+dCML8BAAD//wMArw5+SYkEAAA=
+        H4sIAAAAAAAEAwAAAP//nFRNj9owEP0rI1/alQIKIUuyua56aFW1h63Uw7KKTDwmLomdjQ1bhPjv
+        HccEaOmhqjjgzMx78+bDPjAlWMHmK7nI84WcyFQmk3SWZpNVmqUTLnOBlZCLqspZxMzqB1aO4qua
+        u2ll2q5Bp4wmV9Ujd0hcsyzL4nl2n6QRa43AhsIFYmcRN5NdOpENt7UH1EZVaFnxfGBKC/zJipgQ
+        aC1fIysOrDcN/TNurbKOa+cxRjukU8EOSw2wZJq3uGQFnR45xS9ZFOymF9hb73n2BoAh3h+WTDls
+        r12Dm+xdb8S2cuWFk3dUH3GS83VLCpTbe8oEjkMaDyTmv0JXXNPvFjuHYxAE8BIOI9d/KWxVs7lN
+        MvsXgTQvcQul2v7U579J65H6TxhrtNLr8jKJ7wgaUYAzsEaNPW0BcPj09PULhHUBaXqyVFvrTIs9
+        +P4KGOYFb8rV1M8wrgiQVzV4aq58FvIMw5rCtxrBVjW2HARKpdHC48g3cHhS4FqcqID3Pd9P4YMn
+        HNih5pYCAmFwg5HwkZbhpNMGNddrMDCOo5/Ck4G3S7VK72gX4RQ/lOUzCDgBFNopfEb3zoIwYKl2
+        V/uihi6pqgCpeuuCuiLoKmBYOXj/6vaQ3EUQ1ih8z+9IAVJ3TkWeMX4JQsjMQ/xgRwbqgLbbHsFR
+        A4eZKAs73igxZceINWZN8ld0CfW2aSJGnVW2LsOY6ZbRxDp2fInYdryUFN52rnRmg5pg8yTzt3J8
+        B872JH6ImDOON2fT/XwR+Tt2gZcCadAN0RxYRYNCcQ6OSdwN7XX8ZRNHKbM4J9ApwUBX1uqilN6W
+        33ytsvacjsogrN1b2oaSmrDGvuvV8NDIrozvcyGTh4d5XhKFiPMkLmWXl5tdSJPEySJO44QdfwEA
+        AP//AwD80dzVTgUAAA==
     headers:
-      CF-RAY:
-      - 996ab686fa71e507-TXL
       Connection:
       - keep-alive
       Content-Encoding:
@@ -72,27 +75,132 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 30 Oct 2025 11:53:34 GMT
+      - Fri, 24 Apr 2026 13:32:04 GMT
       Server:
-      - cloudflare
-      Set-Cookie:
-      - __cf_bm=qgJg.F1AKP4lfM1AxBdjuHlETxv9GF3O4sjVbeATmho-1761825214-1.0.1.1-aCP1i5jVvSsdrw4tO3KL9CCQ1FuDeiuKnL8MKHVliBM6uBlPX1TzXggd1tD3rWjGGapxJ87jeg5Mt7xEnb7eWKVfSa9aGgt4RjJpN9Higes;
-        path=/; expires=Thu, 30-Oct-25 12:23:34 GMT; domain=.deepseek.com; HttpOnly;
-        Secure; SameSite=None
+      - elb
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Transfer-Encoding:
       - chunked
+      Via:
+      - 1.1 c8809e7d250b8cf39350ecdac0e4a800.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - VkB4uub2a2OGYMVquAgpif7olzEqHTwXpkbjqkXld1D423tJCZBoYw==
+      X-Amz-Cf-Pop:
+      - TXL52-P2
+      X-Cache:
+      - Miss from cloudfront
       X-Content-Type-Options:
       - nosniff
       access-control-allow-credentials:
       - 'true'
-      cf-cache-status:
-      - DYNAMIC
       vary:
       - origin, access-control-request-method, access-control-request-headers
       x-ds-trace-id:
-      - 4b6d9992c34b7f92c179e6cad4163cc1
+      - 1033cc14eaf65c62b19ec3aa010d180a
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"messages":[{"role":"system","content":"You are a helpful assistant.\n\nYou
+      must respond with valid JSON matching this schema:\n{\n  \"$defs\": {\n    \"Item\":
+      {\n      \"properties\": {\n        \"product_name\": {\n          \"title\":
+      \"Product Name\",\n          \"type\": \"string\"\n        },\n        \"quantity\":
+      {\n          \"title\": \"Quantity\",\n          \"type\": \"integer\"\n        }\n      },\n      \"required\":
+      [\n        \"product_name\",\n        \"quantity\"\n      ],\n      \"title\":
+      \"Item\",\n      \"type\": \"object\"\n    },\n    \"Order\": {\n      \"properties\":
+      {\n        \"items\": {\n          \"items\": {\n            \"$ref\": \"#/$defs/Item\"\n          },\n          \"title\":
+      \"Items\",\n          \"type\": \"array\"\n        }\n      },\n      \"required\":
+      [\n        \"items\"\n      ],\n      \"title\": \"Order\",\n      \"type\":
+      \"object\"\n    }\n  },\n  \"properties\": {\n    \"name\": {\n      \"title\":
+      \"Name\",\n      \"type\": \"string\"\n    },\n    \"orders\": {\n      \"items\":
+      {\n        \"$ref\": \"#/$defs/Order\"\n      },\n      \"title\": \"Orders\",\n      \"type\":
+      \"array\"\n    }\n  },\n  \"required\": [\n    \"name\",\n    \"orders\"\n  ],\n  \"title\":
+      \"Customer\",\n  \"type\": \"object\"\n}"},{"role":"user","content":"Create
+      a customer named Carol with 2 orders, each containing 2 items"}],"model":"deepseek-v4-flash","max_tokens":8192,"response_format":{"type":"json_object"},"stream":false}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1484'
+      Content-Type:
+      - application/json
+      Host:
+      - api.deepseek.com
+      User-Agent:
+      - OpenAI/Python 2.32.0
+      X-Stainless-Arch:
+      - x64
+      X-Stainless-Async:
+      - 'false'
+      X-Stainless-Lang:
+      - python
+      X-Stainless-OS:
+      - Linux
+      X-Stainless-Package-Version:
+      - 2.32.0
+      X-Stainless-Runtime:
+      - CPython
+      X-Stainless-Runtime-Version:
+      - 3.14.3
+      x-stainless-read-timeout:
+      - '600'
+      x-stainless-retry-count:
+      - '0'
+    method: POST
+    uri: https://api.deepseek.com/beta/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAEAwAAAP//vFVNb9swDP0rhC69OIY/0iT1bhu2wzBshw7YYSkMRaJjLbLkWXK7Ish/
+        H2UnTZasWNHDkEMUUu+RIh+ZLVOSFUxmgnORi0m1kulkupjjZDFLZ5Ob+WqR5NNpnq5SFjG7+oHC
+        031Rcx8L27QavbKGXKJD7pG40vl8nkzn+fU8Yo2VqAM9YusQN5P76aTS3NUBUFsl0LHi+5YpI/EX
+        KxJCoHN8jazYss5q+mbcOeU8Nz5grPFIp4JtlwZgyQxvcMkKOr3jdH/JotFuO4mdC57vwQAw3A+H
+        JVMem1PX4CZ721nZC18eOXlL7yNOcv7sKQPlHwNlBrshTAAS81+hK27oc4nNYTcmBHA3Hg5cr8qw
+        UXpzGSR9SYLUL3kJpbed5xd+U647qj9hnDXKrMtjJ74hGEQJ3sKoAeDw8fbLZxjFApXtyCJ6522D
+        HYTqShi6BQ/K11TNsVkRIBc1BGKuQgzyDK2K4WuN4ESNDQflgPp0ryTKGG4teHLZ3re9B1fbXktY
+        YbE0S/NfBBLH8WUJyfiC+j8PPa//Xmuv0sfzUf6p4Oeh5wkeBBLKfqKGSmkNyoR+hbkaOu+AGwn7
+        YVLoqIfKCBzaqIzzHV2kfQLSojNX1NMWhaoeI3hAENxA7xBazQXWVtOE7zm12uB+sNOxH0E42ZIB
+        ehHDWxIH4ff6aDhdVh5Iy5oWi6ILn9BfuYGbVlpD4fcpU3ofSL2DPiEtYNgHwwvG8Y5OXkJqDU/L
+        3wyCHyFZAWFAR0SYtz8A6WDPYnhvXN8h3FM+chidmO0ipu2a0ljRgjS91hGraChcXY4jSBuQ5qll
+        u7uI9YeFSdeb1pfebtAQLM9oAx939NGekN1bz/WTaZZPo7D/jvBSIo2hJpotEzSXKJ8uZ9czSu+C
+        +BRx3BOHZLIkgPYhBsKyVsdcifPM2yjnnkLOUwK7R0ddLakOa+zaTg3/A1VbJtcLWWU3N/miJH6Z
+        LLKkrNpFubkf42RJNkumScZ2vwEAAP//AwAZW4HP7QYAAA==
+    headers:
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 24 Apr 2026 16:15:57 GMT
+      Server:
+      - elb
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 aa1aad2570739ff06cb3e51c135cb4da.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - O5qRYBi8pKD7QrirtpZkT0AuacClR9FvZWRGexlVi9PNzBbrfbvv3w==
+      X-Amz-Cf-Pop:
+      - TXL50-P6
+      X-Cache:
+      - Miss from cloudfront
+      X-Content-Type-Options:
+      - nosniff
+      access-control-allow-credentials:
+      - 'true'
+      vary:
+      - origin, access-control-request-method, access-control-request-headers
+      x-ds-trace-id:
+      - 740d9fa0063627e8552c02c79bce104f
     status:
       code: 200
       message: OK

@@ -1,87 +1,57 @@
 interactions:
 - request:
-    body: '{"messages":[{"role":"user","content":"What is 537 * 943?"}],"model":"deepseek-reasoner","max_tokens":8192,"stream":false}'
+    body: '{"messages":[{"role":"user","content":"What is 537 * 943?"}],"model":"deepseek-v4-flash","max_tokens":8192,"stream":false}'
     headers:
-      accept:
+      Accept:
       - application/json
-      accept-encoding:
+      Accept-Encoding:
       - gzip, deflate
-      connection:
+      Connection:
       - keep-alive
-      content-length:
+      Content-Length:
       - '122'
-      content-type:
+      Content-Type:
       - application/json
-      host:
+      Host:
       - api.deepseek.com
-      user-agent:
-      - OpenAI/Python 1.65.5
-      x-stainless-arch:
+      User-Agent:
+      - OpenAI/Python 2.32.0
+      X-Stainless-Arch:
       - x64
-      x-stainless-async:
+      X-Stainless-Async:
       - 'false'
-      x-stainless-lang:
+      X-Stainless-Lang:
       - python
-      x-stainless-os:
+      X-Stainless-OS:
       - Linux
-      x-stainless-package-version:
-      - 1.65.5
+      X-Stainless-Package-Version:
+      - 2.32.0
+      X-Stainless-Runtime:
+      - CPython
+      X-Stainless-Runtime-Version:
+      - 3.14.3
       x-stainless-read-timeout:
       - '600'
       x-stainless-retry-count:
       - '0'
-      x-stainless-runtime:
-      - CPython
-      x-stainless-runtime-version:
-      - 3.11.9
     method: POST
     uri: https://api.deepseek.com/beta/chat/completions
   response:
     body:
       string: !!binary |
-        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
-        v5Ck6Nv/AAAA//8DAMnZ6iryFwAA
+        H4sIAAAAAAAEAwAAAP//ZFNLb5wwEP4rli9NtmZlMCyPKqpy7y2VoqqpkBeGxV1jU2zSRlH+e8ew
+        2U3aCwzj7zEzjJ+pamlF5V7KnejaqORlEaX7kkelFPso7vJcdoLLTMSUUbv/CY1HfNNLv23sMGrw
+        yho8aiaQHlArzvOcizzjMaODbUEjvAUYHcAxekyjTkvXB0JvVQOOVt+fqTIt/KEVRwY4Jw9Aq2c6
+        WY1vKp1TzkvjA8caDxhVNBM5GWbt1agVtGT/RMpUEPg1S+1IxndMlPEWGViVs0aZQ33h3gMxgCRv
+        SWhh9kCC3CZIbMkX8B8cae1ZvpGhxe2DeTDIbKQJh6GiVk7tP6gqoM5i5OYkfFVyTj6SNDzE9Zre
+        rDkEb5Z8CMTiEqJwuLA35SZe4rQQAms8fzDB+WdyL5WvgsumRHzAMOLsElx4AXpWRrNVOEUAhkmc
+        FovuErO0uEAFpmK2i+OFfDcPVRAOathHEgds0OIpywv+iYx6dit+ya7/IAzkVnuYDI7xEfQTw/HN
+        ew1R00NzPNUeBn9rrO9hIgP43rbLwdrvqWDG0XdQBk1Cv1m+Pb2DGyauMv4xv75JdqzIlkGzPAtD
+        EZzteLkldzbAFpXolHxTJ/kGbmnza48G0rjfWIp6s0svjGp7GCe7x501s9aMdsoo19frjuFSOm9H
+        +vKD0fl1hxE+jL729ggGaXESdvj11pzTSZYy6q2X+pLa7Rh9x65b8FJpVHmmjcThtWcwx9r+k32L
+        v9yC10qSNEHSyWCRq3t1KRRv4ruzQTl3tosD1T05D0ONIzjANE5quZXdWPOsaLukLEVRo0LLi4TX
+        3VjUx8fVJeHJjqc8oS9/AQAA//8DAECHoZd7BAAA
     headers:
-      CF-RAY:
-      - 996ab357a84fd81e-TXL
       Connection:
       - keep-alive
       Content-Encoding:
@@ -89,27 +59,117 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 30 Oct 2025 11:51:24 GMT
+      - Fri, 24 Apr 2026 13:31:41 GMT
       Server:
-      - cloudflare
-      Set-Cookie:
-      - __cf_bm=vmafdgS_BtTvArdD8cfrjC395waa6jsxn7dQTg2EE7o-1761825084-1.0.1.1-dnqK5xAEBzC4sJNuAv0HMdqg5xjFT.SKm8fXeTfLqSyKbNv__Fe5ES7mVOuX2.r_BdkzTxpY0y.wl.WNanmEQkvxbAxYCOBLPYYfiDfa.fg;
-        path=/; expires=Thu, 30-Oct-25 12:21:24 GMT; domain=.deepseek.com; HttpOnly;
-        Secure; SameSite=None
+      - elb
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Transfer-Encoding:
       - chunked
+      Via:
+      - 1.1 b0a751f9161fd546ec249858c6f7afc6.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - zwIrONP7nSqijAqaIQ9-UijAUBuwm5XYAu_vPXUoMeFFhP6xl3Z_dQ==
+      X-Amz-Cf-Pop:
+      - TXL52-P2
+      X-Cache:
+      - Miss from cloudfront
       X-Content-Type-Options:
       - nosniff
       access-control-allow-credentials:
       - 'true'
-      cf-cache-status:
-      - DYNAMIC
       vary:
       - origin, access-control-request-method, access-control-request-headers
       x-ds-trace-id:
-      - 61571b863b291f46aee78cd2cf1fa395
+      - b19d74c8600dc16d3377cf61357b6fc1
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"messages":[{"role":"user","content":"What is 537 * 943?"}],"model":"deepseek-v4-flash","max_tokens":8192,"stream":false}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '122'
+      Content-Type:
+      - application/json
+      Host:
+      - api.deepseek.com
+      User-Agent:
+      - OpenAI/Python 2.32.0
+      X-Stainless-Arch:
+      - x64
+      X-Stainless-Async:
+      - 'false'
+      X-Stainless-Lang:
+      - python
+      X-Stainless-OS:
+      - Linux
+      X-Stainless-Package-Version:
+      - 2.32.0
+      X-Stainless-Runtime:
+      - CPython
+      X-Stainless-Runtime-Version:
+      - 3.14.3
+      x-stainless-read-timeout:
+      - '600'
+      x-stainless-retry-count:
+      - '0'
+    method: POST
+    uri: https://api.deepseek.com/beta/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAEAwAAAP//ZFRNj9MwEP0rli8sWbdyYrdJilYIzggOIHEAFLnJZGPqxFHssKxW+98Z
+        O+2mKy7tZOa9+R4/Ud3QA92lTbsHoTapbIuNzJp8U4oSNs2+EOVeiJJnijJqj7+h9oivO+W3te1H
+        A17bAU31BMoD+krzPOcyF6JgtLcNGIQ3AKMDOG3+yE1rlOsCobO6BkcPP56oHhr4Sw8cGeCcugd6
+        eKKTNfhPlXPaeTX4wLGDB5QO9FsHZJxsM9ee2JbsRE7U0JBSCqId2fE9E2W6RQqm5eygh/tqJX8H
+        MgA0xFsSapg9RAdJoG/JJ/BvHGks6Wfj9Wh0rUKN25/DzwGZtRrIEb2eiPaIehgOK5ncneWbknNy
+        S2T4EW8XdbLoMNUk6oMgotcgBeOFXZKEpPFbFkJcfzDB+XvyXWkfoyYlcgKGkUdwjDgbv5IX8oL/
+        UPtZGfMYklsDJeWKE6sYKFvycfZY6QTtbM6RLvksLr/hAhAcae+w/S05Qq1mh23kPAS4kzvOOOcx
+        o3PQO8wzcMN8lqGoo4FY/2f461lMDhsTm5BITAjFLJXFRWKy4BGOsx8iWiAiZfs0jeqvc38I5ccg
+        t0gNhOCOS5YX/B0ZzewWfNQuKxKm+tXi8rgHmK5352rcjZ0x1U3dQX0iD9p3CLe+Q3wPvrPN6w24
+        wSbcivxtEpYxhMeWoISLgM2PKpmnDNWoujkPJBpl3JRr46UWhJdpWKPVKCQryvSqEPJlCvubYLuJ
+        0702ajKP535h3f8XSJ8ZNfYer+iIVzjMxjDa6kG7rlrmg2fmvB3p8y9G58tVIrwffeXtCQakpVm4
+        yss78KIWMmfUW6/MqtqVjL5iVw14pQ16eaK1wu42L2COuf3n9hq/nvUlEyEyJJ0DRHdVp9dE8W15
+        Zeu1cy/h0kB1j85DX2EL7mEaJx3fmXas+K5o2qwsRVGhh4YXGa/asahOf5YoGc/2XPKMPv8DAAD/
+        /wMA9j4Usk0FAAA=
+    headers:
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 24 Apr 2026 16:15:38 GMT
+      Server:
+      - elb
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 baf250e244bb7810e57efa7ca7e2176c.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 69LOrs2EfEjENDz1pbPBI-grYtEP3fbhSs5OkO2XuJ7jG1h5OdrocA==
+      X-Amz-Cf-Pop:
+      - TXL52-P1
+      X-Cache:
+      - Miss from cloudfront
+      X-Content-Type-Options:
+      - nosniff
+      access-control-allow-credentials:
+      - 'true'
+      vary:
+      - origin, access-control-request-method, access-control-request-headers
+      x-ds-trace-id:
+      - 6220767920f1024ff8f56fd13b5c1cbb
     status:
       code: 200
       message: OK

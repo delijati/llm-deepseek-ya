@@ -1,55 +1,55 @@
 interactions:
 - request:
     body: '{"messages":[{"role":"user","content":"Return a JSON object with keys:
-      name, color, and species for a parrot"}],"model":"deepseek-chat","max_tokens":8192,"response_format":{"type":"json_object"},"stream":false}'
+      name, color, and species for a parrot"}],"model":"deepseek-v4-flash","max_tokens":8192,"response_format":{"type":"json_object"},"stream":false}'
     headers:
-      accept:
+      Accept:
       - application/json
-      accept-encoding:
+      Accept-Encoding:
       - gzip, deflate
-      connection:
+      Connection:
       - keep-alive
-      content-length:
-      - '210'
-      content-type:
+      Content-Length:
+      - '214'
+      Content-Type:
       - application/json
-      host:
+      Host:
       - api.deepseek.com
-      user-agent:
-      - OpenAI/Python 1.65.5
-      x-stainless-arch:
+      User-Agent:
+      - OpenAI/Python 2.32.0
+      X-Stainless-Arch:
       - x64
-      x-stainless-async:
+      X-Stainless-Async:
       - 'false'
-      x-stainless-lang:
+      X-Stainless-Lang:
       - python
-      x-stainless-os:
+      X-Stainless-OS:
       - Linux
-      x-stainless-package-version:
-      - 1.65.5
+      X-Stainless-Package-Version:
+      - 2.32.0
+      X-Stainless-Runtime:
+      - CPython
+      X-Stainless-Runtime-Version:
+      - 3.14.3
       x-stainless-read-timeout:
       - '600'
       x-stainless-retry-count:
       - '0'
-      x-stainless-runtime:
-      - CPython
-      x-stainless-runtime-version:
-      - 3.11.9
     method: POST
     uri: https://api.deepseek.com/beta/chat/completions
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAAwAAAP//XJDBbtswEER/RZgzVciKLMn8ityrgqDJlcWa4hIkEyQw9O+FHNhNe503
-        szPYG5yFRDfPx2Hs+vrcv7R11wxDrel8rE/9aZzbgx2Hlx4CfP5NpkDCLLr8MLxGT8VxgIBJpAtZ
-        yMPQH8b22IytwMqWPCQsUcxE13rP7eaFnaEM+fMGFyx9QDYCK+WsLwR5Q2JPkNA5u1x0uGc4FAp7
-        +W0KVVVVE4JeaYKsJryy958TxIMY9py+0CURhW8oRzKO8heMOiUuE6awYRPwfImJzxkyvHkvMLvg
-        8qIS6cwBErlwxPZL4O0xNCZeY1GFrxQyZNfsQx9vecrtSaBw0f6p9Cfxb1ZZKtr5vB812ixkn95m
-        e3rvRC3ub2PzH1tdzt/mbAL5Mxda1ezChVJM7v7DOap5NkM7Hmw3qpjYNmPbqDmO6vp+v4TtDwAA
-        AP//AwDqP8TlHAIAAA==
+        H4sIAAAAAAAEAwAAAP//ZFLBjpswEP0Va84QEUIC4dZDLz10K+2hh6ZCxh6CG+NB2NndNMq/dwgJ
+        2agnrDcz7715wxmMhhLyZaGkrnW8kettnKXLJC62chXnRb3Fut5kxSqHCKj+gypwv2plWCjqeovB
+        kOOSGlAGZK5lnufJKl8nSQQdabTcrhF7j3iI37K4sdK340BLRqGH8tcZjNP4AeU4gd7LPUJ5hoEs
+        f0F6b3yQLowz5ALyq4TzDpzscAel2MEPsva0g4ifiiwNE7ofEN2E+h6VQT/hXzr5l7hwYUI27ckZ
+        t68e1D9ROEQtAgk6hv4YhBTfXl++i2l78W5CKw548qUYLUTiqhmJm8hCvBqnmIMmpDFK9HIYKAjj
+        Rcf2OTDUkXhHoaQTnAN5ZA2OsyMnuLgQXz/kmO2k8LTiVWxE5vVuuiN2X20hXibnk29nTwu4RGBp
+        3w9Uc+buaG0EjXHGt9UUAofqA/Vw+R3B8X4Dbu/6UAU6oOOxjC/0uPoM52kEgYK0M7JcMvQ0XGkM
+        0lgmOYOSqkU9Nyds7T/Wz/2PK92NrFOeufFf2arWPGyyy6daZ7yf1bJRzp98wK7iAPY49IO5/lNN
+        XyXrQjfpdrsqKmbQSZEmVdMX1eFtUkmTdJNkSQqXfwAAAP//AwB9Q/T6OQMAAA==
     headers:
-      CF-RAY:
-      - 996ab349cca8e52e-TXL
       Connection:
       - keep-alive
       Content-Encoding:
@@ -57,27 +57,114 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 30 Oct 2025 11:51:22 GMT
+      - Fri, 24 Apr 2026 13:31:40 GMT
       Server:
-      - cloudflare
-      Set-Cookie:
-      - __cf_bm=BbdU01p.XBwukIhC6cepCN.vVySBMCgKUdEka6ANbZM-1761825082-1.0.1.1-XfvcMxpPdbX6OKkvLFvSKX5U5BNh1X9KQxfep7VLLX1do97ZvllcdA2IjmvbqQukXKZT3Ywp.lIFgWSTeB7XId905leDpnaJGzyA1G3Twtw;
-        path=/; expires=Thu, 30-Oct-25 12:21:22 GMT; domain=.deepseek.com; HttpOnly;
-        Secure; SameSite=None
+      - elb
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Transfer-Encoding:
       - chunked
+      Via:
+      - 1.1 5038943a1aa22e482096fb08b4c66b96.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - HgdgLJGXfVgBG4G2FysInFSsFDqVBZng3gIQQl6yzIh00euQdupKtw==
+      X-Amz-Cf-Pop:
+      - TXL50-P6
+      X-Cache:
+      - Miss from cloudfront
       X-Content-Type-Options:
       - nosniff
       access-control-allow-credentials:
       - 'true'
-      cf-cache-status:
-      - DYNAMIC
       vary:
       - origin, access-control-request-method, access-control-request-headers
       x-ds-trace-id:
-      - c0b637df277b29fa5e3ea6b30c73229b
+      - 6f9159e1e9f64077f16694a57d978875
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"messages":[{"role":"user","content":"Return a JSON object with keys:
+      name, color, and species for a parrot"}],"model":"deepseek-v4-flash","max_tokens":8192,"response_format":{"type":"json_object"},"stream":false}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '214'
+      Content-Type:
+      - application/json
+      Host:
+      - api.deepseek.com
+      User-Agent:
+      - OpenAI/Python 2.32.0
+      X-Stainless-Arch:
+      - x64
+      X-Stainless-Async:
+      - 'false'
+      X-Stainless-Lang:
+      - python
+      X-Stainless-OS:
+      - Linux
+      X-Stainless-Package-Version:
+      - 2.32.0
+      X-Stainless-Runtime:
+      - CPython
+      X-Stainless-Runtime-Version:
+      - 3.14.3
+      x-stainless-read-timeout:
+      - '600'
+      x-stainless-retry-count:
+      - '0'
+    method: POST
+    uri: https://api.deepseek.com/beta/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAEAwAAAP//dFJNj5swEP0r1pwBESCBcOuhlx7aVbdSD02FDB7AG2Mj22Q3jfLfO4R8
+        7KrqydabeW+e3/gEUkAJ23qzSWORhMVKYJjhiod1U6zDfL1Jt6LeikTUEICpX7Dx1N/03EeNGUaF
+        XhpNpcYi90haqzzP4yxP0zyAwQhU1C4QR4e4Dw9Z2Cru+pnQG9mgg/LXCaQW+AZlTAx0jncI5Qms
+        UXQCd046z7WfOUZ7pFsJpx1oPuAOSraDJ6PUcQcBXRujjF3QziLqBXUjNhLdgn8a+B9DhTMJkmln
+        tNRd9ZD+iUwjCuYNM5MfJ8++PH/7yl6l79kej65k8+SAXUYF7KodsR89ssmhZS+T88zxoyM/39FP
+        VjO+aCz5/VeKa3GTY62xxBq5tcbvIGLPhr0+jI3WHKRAhm983gE7cDWhi9iTNTWv1XHxwFmHGq1s
+        rjoR+7z0L0/4EN3lNTNyj+36sBm7RXax8S6UCM4BKNORnZo2qSelAmillq6vlmhpVc6bEc6/A5hu
+        m6X2YfSVN3vURMto74+/dIe3SQDeeK7uyCol6AO5Eui5VCRygoY3PYp7c0zW/lF93//Y/c1InhDn
+        qn9Rq3r5sEkuP9QG6dx9WjaPc0fncagogA7taOXlp7ZjFa8L0SbbbVpUpCDiIomrdiyq/WGZksTJ
+        Js7iBM5/AQAA//8DAGHRwaCPAwAA
+    headers:
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 24 Apr 2026 16:15:37 GMT
+      Server:
+      - elb
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 29da4b53f2ce7517cad842851fd7a428.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - jsAn0P0yWC57RMOIWQ1mc-f00N2ck6dHZbBMfm1pzZlI9gQkkuQVBg==
+      X-Amz-Cf-Pop:
+      - TXL50-P4
+      X-Cache:
+      - Miss from cloudfront
+      X-Content-Type-Options:
+      - nosniff
+      access-control-allow-credentials:
+      - 'true'
+      vary:
+      - origin, access-control-request-method, access-control-request-headers
+      x-ds-trace-id:
+      - e2814225287777ae9029e9ea524bcef1
     status:
       code: 200
       message: OK

@@ -26,8 +26,8 @@ def mock_deepseek_models(monkeypatch):
 
     def mock_get_deepseek_models():
         return [
-            {"id": "deepseek-chat", "object": "model", "owned_by": "deepseek"},
-            {"id": "deepseek-reasoner", "object": "model", "owned_by": "deepseek"},
+            {"id": "deepseek-v4-flash", "object": "model", "owned_by": "deepseek"},
+            {"id": "deepseek-v4-pro", "object": "model", "owned_by": "deepseek"},
         ]
 
     monkeypatch.setattr(llm_deepseek, "get_deepseek_models", mock_get_deepseek_models)

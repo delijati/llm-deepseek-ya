@@ -6,57 +6,56 @@ interactions:
       {\n      \"title\": \"Age\",\n      \"type\": \"integer\"\n    },\n    \"bio\":
       {\n      \"title\": \"Bio\",\n      \"type\": \"string\"\n    }\n  },\n  \"required\":
       [\n    \"name\",\n    \"age\",\n    \"bio\"\n  ],\n  \"title\": \"Dog\",\n  \"type\":
-      \"object\"\n}"},{"role":"user","content":"Invent a cool dog"}],"model":"deepseek-chat","max_tokens":8192,"response_format":{"type":"json_object"},"stream":false}'
+      \"object\"\n}"},{"role":"user","content":"Invent a cool dog"}],"model":"deepseek-v4-flash","max_tokens":8192,"response_format":{"type":"json_object"},"stream":false}'
     headers:
-      accept:
+      Accept:
       - application/json
-      accept-encoding:
+      Accept-Encoding:
       - gzip, deflate
-      connection:
+      Connection:
       - keep-alive
-      content-length:
-      - '661'
-      content-type:
+      Content-Length:
+      - '665'
+      Content-Type:
       - application/json
-      host:
+      Host:
       - api.deepseek.com
-      user-agent:
-      - OpenAI/Python 1.65.5
-      x-stainless-arch:
+      User-Agent:
+      - OpenAI/Python 2.32.0
+      X-Stainless-Arch:
       - x64
-      x-stainless-async:
+      X-Stainless-Async:
       - 'false'
-      x-stainless-lang:
+      X-Stainless-Lang:
       - python
-      x-stainless-os:
+      X-Stainless-OS:
       - Linux
-      x-stainless-package-version:
-      - 1.65.5
+      X-Stainless-Package-Version:
+      - 2.32.0
+      X-Stainless-Runtime:
+      - CPython
+      X-Stainless-Runtime-Version:
+      - 3.14.3
       x-stainless-read-timeout:
       - '600'
       x-stainless-retry-count:
       - '0'
-      x-stainless-runtime:
-      - CPython
-      x-stainless-runtime-version:
-      - 3.11.9
     method: POST
     uri: https://api.deepseek.com/beta/chat/completions
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAAwAAAP//XJLBctswDER/BYMznbFUJZZ1bI/9g1YdDUxCEiqKZEnKiePxv3ekNk7a
-        I/ftLmYAXlEMNvhY1ad+X33a8ZFpVxWPekf1sd5R/1TXp33FZXFEhf70k3XGBvVI+UH7OVjO4h0q
-        1JEps8GmODwVdfm4f6oVzt6wxQYNc0jM027NrebRi+aEzfcrijP8gs1e4cwp0cDYXDF6y9ggpSQp
-        k9sy3mV26/Br6wBadDRziw20+I3DeIktqj+Ahk2v/j5P4j/aQBIQjDKMO3Ychwt89tFwhC/eWmGY
-        5QWeJY9AkCzzBCdLegJyBp5HyQzaU36Ar84/O+h9BBrESr5sDnGZrZWBnWYFI4P1Z06QvD2LGyAs
-        r6+W00qiWYX0a5EY2SYQB3lkCBQntVXpxRi7epYA1GeOQGC9G8DQBXwPZM7s8hI5PbTYuhveFFo/
-        hOhPCRu3WKuwFydp7CJT8g4bTNkHvP1QuLwtOkQ/h9xlP7FL2BTVcd30213v+qFUmH0me1fKslD/
-        pjvDmcSmtVaTHtm815b17e7eWDdK/oj/o7Ok9D6quClMl5R57npxA8cQZfsJfej6Xh/KujBV3YXo
-        zb4u910f6m46b014+w0AAP//AwDy8enb4gIAAA==
+        H4sIAAAAAAAEAwAAAP//vFJNj5swEP0ro7n0AhEJJARuldpLtUoPrdRDUyFjBnBjbIRN2lWU/97x
+        ZvOx2ntP4PF7b94bzwlVgyU2WS0pFTIuRLuNs5TauG7TNl7m63a9SZNiIxOM0Na/SXrGy174hbTD
+        qMkra/hKTiQ8sdYyz/MkzbMii3CwDekgTzQ6okN8zOJWC9cHQm+VJIflzxMq09BfLBNmkHOiIyxP
+        OFnNXxTOKeeF8YFjjSf+K/G0NwB7NGKgPZb8tyNr9hhdyqwQqunrsVb2AvoITrMNkM81TTGZXhhJ
+        DdR2amgCabVWBH+U7+Hp8ydo5wk8BwVOazpyAWCnBTzZYzj0winTwVFNfhYa2km5msgt9rg3ZzbL
+        A3HWMKS62/5BYIg7egvKHDkKCFa1GhrbLeB7T2BnP84ehtl5qAm+fPu6uzgKUSPgZBFwngWwlBQm
+        YF5Gr47Ezsh/cDCIAz3oglaXcwg9zuYQ+54GNmENU3Ys+zC/0CAMLvQI5f80MTxHqG03TrbmjTCz
+        1hG2yijXV5cx8pM7b0c8/4pwvm4Iw4fRV94eyDBtmRVhRa5Lea8vue6tF/pWWm22Eb6hVw15oTTL
+        nFAK2VNzAyds7p3sI/7+0lcrecacV/0XtapXd6O852/uBuXcrRunYK57dp6GimfQ8aNN6mXp27FK
+        1tumXRVFuq1Yokm2q6Rqx211OF7arJLVJsmSFZ7/AQAA//8DAHy15JnaAwAA
     headers:
-      CF-RAY:
-      - 996ab2f6bb61da39-TXL
       Connection:
       - keep-alive
       Content-Encoding:
@@ -64,27 +63,119 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 30 Oct 2025 11:51:09 GMT
+      - Fri, 24 Apr 2026 13:31:34 GMT
       Server:
-      - cloudflare
-      Set-Cookie:
-      - __cf_bm=IMN4Oi9dCeO5hrMq2vP.yF3V.9a0r9twWPeyTRIHRfs-1761825069-1.0.1.1-uMP1FHJHAmuACZIhJdQ4iRhTWWWC9ENN7HccAIcq3gFLc2aT1tt9ME_voz5CQ_pPjyF_HG8BgqIHgPOAMh3q4JfXuKR.8TynRQPo51FpsUQ;
-        path=/; expires=Thu, 30-Oct-25 12:21:09 GMT; domain=.deepseek.com; HttpOnly;
-        Secure; SameSite=None
+      - elb
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Transfer-Encoding:
       - chunked
+      Via:
+      - 1.1 c8809e7d250b8cf39350ecdac0e4a800.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - xZAttGWhOfovm2AUmnSS79ZV9P1q_94bCsW6i3So2ItU932U3RF0Lg==
+      X-Amz-Cf-Pop:
+      - TXL52-P2
+      X-Cache:
+      - Miss from cloudfront
       X-Content-Type-Options:
       - nosniff
       access-control-allow-credentials:
       - 'true'
-      cf-cache-status:
-      - DYNAMIC
       vary:
       - origin, access-control-request-method, access-control-request-headers
       x-ds-trace-id:
-      - 86587bc9342dc890965b8784d222cb15
+      - 5f589cfa34fba2cb83a36270ce3f1a80
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"messages":[{"role":"system","content":"You are a helpful assistant.\n\nYou
+      must respond with valid JSON matching this schema:\n{\n  \"properties\": {\n    \"name\":
+      {\n      \"title\": \"Name\",\n      \"type\": \"string\"\n    },\n    \"age\":
+      {\n      \"title\": \"Age\",\n      \"type\": \"integer\"\n    },\n    \"bio\":
+      {\n      \"title\": \"Bio\",\n      \"type\": \"string\"\n    }\n  },\n  \"required\":
+      [\n    \"name\",\n    \"age\",\n    \"bio\"\n  ],\n  \"title\": \"Dog\",\n  \"type\":
+      \"object\"\n}"},{"role":"user","content":"Invent a cool dog"}],"model":"deepseek-v4-flash","max_tokens":8192,"response_format":{"type":"json_object"},"stream":false}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '665'
+      Content-Type:
+      - application/json
+      Host:
+      - api.deepseek.com
+      User-Agent:
+      - OpenAI/Python 2.32.0
+      X-Stainless-Arch:
+      - x64
+      X-Stainless-Async:
+      - 'false'
+      X-Stainless-Lang:
+      - python
+      X-Stainless-OS:
+      - Linux
+      X-Stainless-Package-Version:
+      - 2.32.0
+      X-Stainless-Runtime:
+      - CPython
+      X-Stainless-Runtime-Version:
+      - 3.14.3
+      x-stainless-read-timeout:
+      - '600'
+      x-stainless-retry-count:
+      - '0'
+    method: POST
+    uri: https://api.deepseek.com/beta/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAEAwAAAP//ZFLBjpswEP2V0ZwJIkA2JLf21qraSt1DD6VCDh6DG+NB2MluFOXfO2y6
+        2bQ9YTzvvXnzxme0GrdYrapcmdIsiFYPi9I8VItKGVrkrTGmMsW6bBUmyLtf1EbBt72KacvD6Cha
+        9lJqJ1KRRGu5Xq+zcl0UywQH1uQEronGQLRfHMuFcSr0M6Fn21LA7Y8zWq/pBbeZMCgE1RFuzzix
+        ky+qEGyIyseZwz6SnLZ4rj1AjV4NVONWTk+90vxcY3ItiMZ8X/z53Vm+h4ENoCA4sQQ7p9o9fFG7
+        SQQmeLaxl9pwCpEmywcBHiaVwN7zswcjiF7IUlQu9icY+EgC8Rocn+TqlNZY+4t4lTwCe+u75t31
+        dwJPpCEydORpksSk1+enr49wjfbafp4qARkhATGewid/lKkF2TI70Nyl8NTzwWnYEbwGb4+UwqPQ
+        thB4oNhL3yva2T3dxQMyQI3f6KXGFD50grcSaUdTApR2aQJFCh8ti0zPUwRNoZ3sOO84xUuCjrtx
+        4p1szR+cS9BYb0PfXGeVtYTII15+Jnh426LAhzE2kffkhbYsN/Ma3x7O7X5TJBg5Kne7ycs8wb/Y
+        jaaorBOVM7aq7UnfwMu8Enf/6d4z3vfx5mW1FM6fDq96TW/vnObVP9XBhnDrmM/kML+SoZEUJMFx
+        kiglAzM22arSJt9siqoRfZ1VedaYsWr2x2ufPMsfsjLL8fIbAAD//wMAlB6Tt4ADAAA=
+    headers:
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 24 Apr 2026 16:15:32 GMT
+      Server:
+      - elb
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 5b945cce9efcabde778966bdff946d7a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - tQvNiZKJFfmJnvdmiwOwRmGWQXQXKU9maueP4cQV93HaOCeNGM4K9g==
+      X-Amz-Cf-Pop:
+      - TXL50-P3
+      X-Cache:
+      - Miss from cloudfront
+      X-Content-Type-Options:
+      - nosniff
+      access-control-allow-credentials:
+      - 'true'
+      vary:
+      - origin, access-control-request-method, access-control-request-headers
+      x-ds-trace-id:
+      - 4333aa6944ee80c939b6b5f9a91b603a
     status:
       code: 200
       message: OK

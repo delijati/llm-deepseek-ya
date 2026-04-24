@@ -9,55 +9,56 @@ interactions:
       {\n      \"title\": \"Name\",\n      \"type\": \"string\"\n    },\n    \"address\":
       {\n      \"$ref\": \"#/$defs/Address\"\n    }\n  },\n  \"required\": [\n    \"name\",\n    \"address\"\n  ],\n  \"title\":
       \"Person\",\n  \"type\": \"object\"\n}"},{"role":"user","content":"Create a
-      person named Alice living in San Francisco"}],"model":"deepseek-chat","max_tokens":8192,"response_format":{"type":"json_object"},"stream":false}'
+      person named Alice living in San Francisco"}],"model":"deepseek-v4-flash","max_tokens":8192,"response_format":{"type":"json_object"},"stream":false}'
     headers:
-      accept:
+      Accept:
       - application/json
-      accept-encoding:
+      Accept-Encoding:
       - gzip, deflate
-      connection:
+      Connection:
       - keep-alive
-      content-length:
-      - '1006'
-      content-type:
+      Content-Length:
+      - '1010'
+      Content-Type:
       - application/json
-      host:
+      Host:
       - api.deepseek.com
-      user-agent:
-      - OpenAI/Python 1.65.5
-      x-stainless-arch:
+      User-Agent:
+      - OpenAI/Python 2.32.0
+      X-Stainless-Arch:
       - x64
-      x-stainless-async:
+      X-Stainless-Async:
       - 'false'
-      x-stainless-lang:
+      X-Stainless-Lang:
       - python
-      x-stainless-os:
+      X-Stainless-OS:
       - Linux
-      x-stainless-package-version:
-      - 1.65.5
+      X-Stainless-Package-Version:
+      - 2.32.0
+      X-Stainless-Runtime:
+      - CPython
+      X-Stainless-Runtime-Version:
+      - 3.14.3
       x-stainless-read-timeout:
       - '600'
       x-stainless-retry-count:
       - '0'
-      x-stainless-runtime:
-      - CPython
-      x-stainless-runtime-version:
-      - 3.11.9
     method: POST
     uri: https://api.deepseek.com/beta/chat/completions
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAAwAAAP//XJDBrtMwEEV/pbprBzlp0yTeseEHECuCIteeNKaJbXn8gKcq/46S8vqA
-        7T3nzmjmDmehcGyMtZ28FPJUn4uTlKbQUh8L2VBXynEs63MNgXD5TiZDwUw6fzBhiTNlFzwETCKd
-        yUKVzblsq7qSncASLM1QsESRiW7F1tvkKThDDPX1Duct/YKSAgsx6ytB3ZHCTFDQzI6z9nsn+Ex+
-        W37v/eHQw+uFeqhDj4+zM9RDPHJtbSLmDe3mlnFORPlhf/E3H376P/5GjcuvD/ZZ+8OnpL1xbEKP
-        TVh7v2IVmMM1pnBhKP8yzwKj846nIZHm4KHAOUSs3wRe3o6IKSwxDzncyDNUVXbbFW8/e+bHUiCH
-        rOd3s5bi3/ZgKWs38zbWaDORfcplV61Pe2fD5PLf+D+6OOb3Vc0qwK+caRlG56+UYnL7l8c4jKNp
-        qra0p3aIKVjZVnIYYzvcfuyTsP4GAAD//wMAu2er5z4CAAA=
+        H4sIAAAAAAAEAwAAAP//tFNNr5swEPwrqz29J0EEJCTArarUQ6W2h1TqoamQYy/BjbEpdl77FOW/
+        dwn5eFHPPdmsZ2Zn7OWIWmGFSd4sSpE3sSiViheCZFzKhYxJbXMlm6VcqgIjdNufJAPjZSvCTLqu
+        NxS0s3wkBxKBWCtdrVbJfJVnSYSdU2QYroh6T7SPXxZxY4RvR0LrtCSP1fcjaqvoD1Yjg7wXO8Lq
+        iIMzvKLwXvsgbBg5zgbiXYXHDVrR0QYr2OA7w0objHgrlBpYYqwzxIeBKEygNJvDJ6EtrLkwQqUO
+        r9PRWlj4MAgrtZdug6cTt+I43lltd/W96TcCS6QgONiRpYEDw8f1l8/QuAEE9DQwBUZfCs6e4LcO
+        LbD6xRaM7d82m8HXlsDLljoBA/06aHZ/VoAnNs/tn5mubvyn6QUm3Snd+XzM8jyD97yA9hzuocuY
+        d3sIcCEwwDr+6knqRpOaAQeTbKtnDMcwQlLrjKLhyjB6Tyz6cIUzWDtwh8Ck813/z+c4RWjcrh/c
+        lufFHoyJsNFW+7aenokHwgfX4+lHhIfr/DC860Md3J4s07K0HAfoOrK3epqmEQYXhLmV5nOexAd6
+        rSgIbVjmiFLwc6kbOGFz/8i+xd8n6WqlyJlz0T+r1a2+G733ns467f2tG6dgrn/1gbqa72BHQ89j
+        Mv4STV8neaGarCznRc3yKimypG76ot6/TFJZki2TRZLh6S8AAAD//wMAINrFXvgDAAA=
     headers:
-      CF-RAY:
-      - 996ab6662e7b33a5-TXL
       Connection:
       - keep-alive
       Content-Encoding:
@@ -65,27 +66,122 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 30 Oct 2025 11:53:29 GMT
+      - Fri, 24 Apr 2026 13:32:00 GMT
       Server:
-      - cloudflare
-      Set-Cookie:
-      - __cf_bm=Zf5TCfJOWUhfMd_0yvhtfhhny4si.N2EaKzslhvzQaQ-1761825209-1.0.1.1-.1wZu2vVtRroG7B3bqeQkuYIvLHQXw1OcnE0IiBoXrVyrrFTjT7Rl70WdRt4pyDSBCP3uVQW5DeXVc_xXsK_V1H84.LctBwe5AafffHYjKc;
-        path=/; expires=Thu, 30-Oct-25 12:23:29 GMT; domain=.deepseek.com; HttpOnly;
-        Secure; SameSite=None
+      - elb
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Transfer-Encoding:
       - chunked
+      Via:
+      - 1.1 24bd81cccb6e13944ee386598f88b8f8.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - -MR1tOVs3ZJTISmqcU3DbuJyUT6cSQk6QMUkIFdfo-qymrhkfb0H_g==
+      X-Amz-Cf-Pop:
+      - TXL52-P1
+      X-Cache:
+      - Miss from cloudfront
       X-Content-Type-Options:
       - nosniff
       access-control-allow-credentials:
       - 'true'
-      cf-cache-status:
-      - DYNAMIC
       vary:
       - origin, access-control-request-method, access-control-request-headers
       x-ds-trace-id:
-      - 87a9000658f34c8ee039ecea229023ef
+      - 22c672606b51e53714017516789be594
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"messages":[{"role":"system","content":"You are a helpful assistant.\n\nYou
+      must respond with valid JSON matching this schema:\n{\n  \"$defs\": {\n    \"Address\":
+      {\n      \"properties\": {\n        \"street\": {\n          \"title\": \"Street\",\n          \"type\":
+      \"string\"\n        },\n        \"city\": {\n          \"title\": \"City\",\n          \"type\":
+      \"string\"\n        }\n      },\n      \"required\": [\n        \"street\",\n        \"city\"\n      ],\n      \"title\":
+      \"Address\",\n      \"type\": \"object\"\n    }\n  },\n  \"properties\": {\n    \"name\":
+      {\n      \"title\": \"Name\",\n      \"type\": \"string\"\n    },\n    \"address\":
+      {\n      \"$ref\": \"#/$defs/Address\"\n    }\n  },\n  \"required\": [\n    \"name\",\n    \"address\"\n  ],\n  \"title\":
+      \"Person\",\n  \"type\": \"object\"\n}"},{"role":"user","content":"Create a
+      person named Alice living in San Francisco"}],"model":"deepseek-v4-flash","max_tokens":8192,"response_format":{"type":"json_object"},"stream":false}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1010'
+      Content-Type:
+      - application/json
+      Host:
+      - api.deepseek.com
+      User-Agent:
+      - OpenAI/Python 2.32.0
+      X-Stainless-Arch:
+      - x64
+      X-Stainless-Async:
+      - 'false'
+      X-Stainless-Lang:
+      - python
+      X-Stainless-OS:
+      - Linux
+      X-Stainless-Package-Version:
+      - 2.32.0
+      X-Stainless-Runtime:
+      - CPython
+      X-Stainless-Runtime-Version:
+      - 3.14.3
+      x-stainless-read-timeout:
+      - '600'
+      x-stainless-retry-count:
+      - '0'
+    method: POST
+    uri: https://api.deepseek.com/beta/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAEAwAAAP//ZFLLjtswDPwVgpdenMCPZGPn1h56KPo4pEAPTWEoEh2rK0uuJaddBPn3
+        UvYm2W1PlknOcDjkGbXCLapSPpSqkIui2qjFKiuLhVivy4VcPZRNpg6HKt1ggu7wk2TgetmKsJSu
+        6w0F7Syn5EAiEHNlm80mXW2KdZFg5xSZSE/Ue6LHxWm1aIzwbQS0TkvyuP1+Rm0V/cFtygjyXhwJ
+        t2ccnOEvCu+1D8KGiHE2EL+2eN5bgD1a0dEet/x6a5htj8kcF0oNzBRTU2Ws9WEgCnN1lhfwSWgL
+        Ow5MmFghdXia8zth4f0grNReuj1G0sveXlgCj+md1fZY38V8I7BECoKDI1ka2AgQ8GH35TPMjkHj
+        Bo70NDAWomgFk+AEfuvQwrNciIJedl7C15bAy5Y6AQP9GjVPBfMgIKyCqHgJO20lgbPmaQqA9nDU
+        J7LMflfWD+6kVRTWGzF6fTDMPFkyCVrCRwpvPIye2IlX/gCL966j0PLYS3g3hsjbjT6AG0PPv1Pr
+        OO8SLwkad+RmB16tHY1JsNFW+7aenePd+eB6vPxIcLyumsu7PtTBPZJlWJ5VcdfX67rFKz6p4IIw
+        t0iR5Qm+QteKgtCGWc4oBTunbsVZXrK6/3hfIu7bvWpZV4x57jDx1a2+K2XKf7Kd9v7WscoY7J98
+        oK5mF4409IOe7rfp63RdqiavqqKsmV+lZZ7WTV/Wj6e5T57mD+kqzfHyFwAA//8DAKfJyz+lAwAA
+    headers:
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 24 Apr 2026 16:15:53 GMT
+      Server:
+      - elb
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 b22f104a676a3f4e13adba34eb669b5c.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - MrwhAlIQmYEdzS0o5WAtNz0FPTKu2xuDC5G4UqiXNObSnuadm9aa4A==
+      X-Amz-Cf-Pop:
+      - TXL52-P1
+      X-Cache:
+      - Miss from cloudfront
+      X-Content-Type-Options:
+      - nosniff
+      access-control-allow-credentials:
+      - 'true'
+      vary:
+      - origin, access-control-request-method, access-control-request-headers
+      x-ds-trace-id:
+      - 3c1316974a69180e079ba85fb010b29e
     status:
       code: 200
       message: OK

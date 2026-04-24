@@ -27,9 +27,17 @@ def get_deepseek_models():
     return ret
 
 
+# Backward compatibility aliases for deprecated model names.
+# Per DeepSeek pricing docs: deepseek-chat and deepseek-reasoner will be deprecated;
+# they correspond to the non-thinking and thinking modes of deepseek-v4-flash.
+DEPRECATED_MODEL_ALIASES = {
+    "deepseek-v4-flash": ["deepseek-chat", "deepseek-reasoner"],
+}
+
+
 def get_model_ids_with_aliases(models):
-    """Extract model IDs and create empty aliases list."""
-    return [(model["id"], []) for model in models]
+    """Extract model IDs and create aliases list (including deprecated name aliases)."""
+    return [(model["id"], DEPRECATED_MODEL_ALIASES.get(model["id"], [])) for model in models]
 
 
 class DeepSeekChat(Chat):
@@ -89,6 +97,10 @@ class DeepSeekChat(Chat):
         kwargs.pop("show_reasoning", None)
         show_reasoning = prompt.options.show_reasoning
 
+        # In JSON mode the output must be pure JSON; suppress reasoning in the
+        # text output so that json.loads() works on the response directly.
+        is_json_mode = bool(prompt.schema or prompt.options.response_format)
+
         client = self.get_client(key)
 
         try:
@@ -108,7 +120,7 @@ class DeepSeekChat(Chat):
                         chunk.choices[0].delta, "reasoning_content", None
                     )
 
-                    if reasoning_content is not None and show_reasoning:
+                    if reasoning_content is not None and show_reasoning and not is_json_mode:
                         yield reasoning_content
 
                     if content is not None:
@@ -116,8 +128,9 @@ class DeepSeekChat(Chat):
             else:
                 # For non-streaming response
                 content = completion.choices[0].message.content
-                # If we have reasoning content and want to show it
-                if show_reasoning and hasattr(
+                # Show reasoning only when not in JSON mode (reasoning would
+                # corrupt the JSON output making json.loads() fail)
+                if show_reasoning and not is_json_mode and hasattr(
                     completion.choices[0].message, "reasoning_content"
                 ):
                     reasoning = completion.choices[0].message.reasoning_content
@@ -125,7 +138,8 @@ class DeepSeekChat(Chat):
                         yield reasoning
                         yield "\n\n"
                 # Then output the regular content
-                yield content
+                if content is not None:
+                    yield content
 
             response.response_json = {"content": "".join(response._chunks)}
 

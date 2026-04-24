@@ -14,7 +14,7 @@ DEEPSEEK_API_KEY = os.environ.get("PYTEST_DEEPSEEK_API_KEY", None) or "sk-..."
 @pytest.mark.vcr
 def test_prompt():
     """Test basic prompt with DeepSeek Chat model"""
-    model = llm.get_model("deepseek-chat")
+    model = llm.get_model("deepseek-v4-flash")
     response = model.prompt(
         "Name for a pet pelican, just the name", key=DEEPSEEK_API_KEY
     )
@@ -34,7 +34,7 @@ def test_prompt_with_pydantic_schema():
         age: int
         bio: str
 
-    model = llm.get_model("deepseek-chat")
+    model = llm.get_model("deepseek-v4-flash")
     response = model.prompt(
         "Invent a cool dog", key=DEEPSEEK_API_KEY, schema=Dog, stream=False
     )
@@ -61,7 +61,7 @@ def test_prompt_with_multiple_dogs():
     class Dogs(BaseModel):
         dogs: List[Dog]
 
-    model = llm.get_model("deepseek-chat")
+    model = llm.get_model("deepseek-v4-flash")
     response = model.prompt(
         "Invent 3 cool dogs", key=DEEPSEEK_API_KEY, schema=Dogs, stream=False
     )
@@ -84,7 +84,7 @@ def test_prompt_with_multiple_dogs():
 @pytest.mark.vcr
 def test_json_response_format():
     """Test the response_format option"""
-    model = llm.get_model("deepseek-chat")
+    model = llm.get_model("deepseek-v4-flash")
     response = model.prompt(
         "Return a JSON object with keys: name, color, and species for a parrot",
         key=DEEPSEEK_API_KEY,
@@ -99,8 +99,8 @@ def test_json_response_format():
 
 @pytest.mark.vcr
 def test_reasoner_model():
-    """Test DeepSeek Reasoner model with reasoning output"""
-    model = llm.get_model("deepseek-reasoner")
+    """Test DeepSeek model with reasoning (thinking mode) output"""
+    model = llm.get_model("deepseek-v4-flash")
     response = model.prompt(
         "What is 537 * 943?", key=DEEPSEEK_API_KEY, show_reasoning=True, stream=False
     )
@@ -116,8 +116,8 @@ def test_reasoner_model():
 
 @pytest.mark.vcr
 def test_reasoner_model_hide_reasoning():
-    """Test DeepSeek Reasoner model with reasoning hidden"""
-    model = llm.get_model("deepseek-reasoner")
+    """Test DeepSeek model with reasoning (thinking mode) hidden"""
+    model = llm.get_model("deepseek-v4-flash")
     response = model.prompt(
         "What is 2 + 2?", key=DEEPSEEK_API_KEY, show_reasoning=False, stream=False
     )
@@ -130,7 +130,7 @@ def test_reasoner_model_hide_reasoning():
 @pytest.mark.vcr
 def test_prefill_option():
     """Test the prefill option for Chat Prefix Completion"""
-    model = llm.get_model("deepseek-chat")
+    model = llm.get_model("deepseek-v4-flash")
     response = model.prompt(
         "Continue this story",
         key=DEEPSEEK_API_KEY,
@@ -155,7 +155,7 @@ def test_nested_model_direct_reference():
         name: str
         address: Address
 
-    model = llm.get_model("deepseek-chat")
+    model = llm.get_model("deepseek-v4-flash")
     response = model.prompt(
         "Create a person named Alice living in San Francisco",
         key=DEEPSEEK_API_KEY,
@@ -180,7 +180,7 @@ def test_nested_model_optional():
         name: str
         employer: Optional[Company]
 
-    model = llm.get_model("deepseek-chat")
+    model = llm.get_model("deepseek-v4-flash")
     response = model.prompt(
         "Create a person named Bob who works at TechCorp",
         key=DEEPSEEK_API_KEY,
@@ -209,7 +209,7 @@ def test_nested_model_deep_composition():
         name: str
         orders: List[Order]
 
-    model = llm.get_model("deepseek-chat")
+    model = llm.get_model("deepseek-v4-flash")
     response = model.prompt(
         "Create a customer named Carol with 2 orders, each containing 2 items",
         key=DEEPSEEK_API_KEY,
@@ -252,6 +252,6 @@ def test_cli_deepseek_models(tmpdir, monkeypatch):
 @pytest.mark.vcr
 def test_supports_schema_attribute():
     """Test that DeepSeek Chat models have supports_schema set to True"""
-    model = llm.get_model("deepseek-chat")
+    model = llm.get_model("deepseek-v4-flash")
     assert hasattr(model, "supports_schema")
     assert model.supports_schema is True

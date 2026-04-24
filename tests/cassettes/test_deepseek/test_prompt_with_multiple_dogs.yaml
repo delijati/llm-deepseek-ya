@@ -10,61 +10,58 @@ interactions:
       {\n      \"items\": {\n        \"$ref\": \"#/$defs/Dog\"\n      },\n      \"title\":
       \"Dogs\",\n      \"type\": \"array\"\n    }\n  },\n  \"required\": [\n    \"dogs\"\n  ],\n  \"title\":
       \"Dogs\",\n  \"type\": \"object\"\n}"},{"role":"user","content":"Invent 3 cool
-      dogs"}],"model":"deepseek-chat","max_tokens":8192,"response_format":{"type":"json_object"},"stream":false}'
+      dogs"}],"model":"deepseek-v4-flash","max_tokens":8192,"response_format":{"type":"json_object"},"stream":false}'
     headers:
-      accept:
+      Accept:
       - application/json
-      accept-encoding:
+      Accept-Encoding:
       - gzip, deflate
-      connection:
+      Connection:
       - keep-alive
-      content-length:
-      - '1049'
-      content-type:
+      Content-Length:
+      - '1053'
+      Content-Type:
       - application/json
-      host:
+      Host:
       - api.deepseek.com
-      user-agent:
-      - OpenAI/Python 1.65.5
-      x-stainless-arch:
+      User-Agent:
+      - OpenAI/Python 2.32.0
+      X-Stainless-Arch:
       - x64
-      x-stainless-async:
+      X-Stainless-Async:
       - 'false'
-      x-stainless-lang:
+      X-Stainless-Lang:
       - python
-      x-stainless-os:
+      X-Stainless-OS:
       - Linux
-      x-stainless-package-version:
-      - 1.65.5
+      X-Stainless-Package-Version:
+      - 2.32.0
+      X-Stainless-Runtime:
+      - CPython
+      X-Stainless-Runtime-Version:
+      - 3.14.3
       x-stainless-read-timeout:
       - '600'
       x-stainless-retry-count:
       - '0'
-      x-stainless-runtime:
-      - CPython
-      x-stainless-runtime-version:
-      - 3.11.9
     method: POST
     uri: https://api.deepseek.com/beta/chat/completions
   response:
     body:
       string: !!binary |
-        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
+        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
     headers:
-      CF-RAY:
-      - 996ab3111c395053-TXL
       Connection:
       - keep-alive
       Content-Encoding:
@@ -72,27 +69,126 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 30 Oct 2025 11:51:13 GMT
+      - Fri, 24 Apr 2026 13:31:37 GMT
       Server:
-      - cloudflare
-      Set-Cookie:
-      - __cf_bm=Op2gnG8mk7jJM7Li0azCV1wtb5Yxa2MoFhh_TLdcOms-1761825073-1.0.1.1-e_0zHVgk5oEdHtRXGxYox0lQyhbaLTupV5J332.dRue5ite9kd_nXZXUcM6xALoqNmyx1AusEvjWdqlbsidr2X4deBxZD9P.JOGTxaPLh2w;
-        path=/; expires=Thu, 30-Oct-25 12:21:13 GMT; domain=.deepseek.com; HttpOnly;
-        Secure; SameSite=None
+      - elb
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Transfer-Encoding:
       - chunked
+      Via:
+      - 1.1 4e763d9a265cd117aa88d6cf075c3bb4.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - Ou2FYuYz717yNnWJbf62c1wxqYP8l_umuZYferSdhUdO1GgGHHqUSA==
+      X-Amz-Cf-Pop:
+      - TXL50-P6
+      X-Cache:
+      - Miss from cloudfront
       X-Content-Type-Options:
       - nosniff
       access-control-allow-credentials:
       - 'true'
-      cf-cache-status:
-      - DYNAMIC
       vary:
       - origin, access-control-request-method, access-control-request-headers
       x-ds-trace-id:
-      - e7bb5fee3fbf29aa0944d9ddbd4e597e
+      - d0f00ca2356221b0990e73703b2bdf36
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"messages":[{"role":"system","content":"You are a helpful assistant.\n\nYou
+      must respond with valid JSON matching this schema:\n{\n  \"$defs\": {\n    \"Dog\":
+      {\n      \"properties\": {\n        \"name\": {\n          \"title\": \"Name\",\n          \"type\":
+      \"string\"\n        },\n        \"age\": {\n          \"title\": \"Age\",\n          \"type\":
+      \"integer\"\n        },\n        \"bio\": {\n          \"title\": \"Bio\",\n          \"type\":
+      \"string\"\n        }\n      },\n      \"required\": [\n        \"name\",\n        \"age\",\n        \"bio\"\n      ],\n      \"title\":
+      \"Dog\",\n      \"type\": \"object\"\n    }\n  },\n  \"properties\": {\n    \"dogs\":
+      {\n      \"items\": {\n        \"$ref\": \"#/$defs/Dog\"\n      },\n      \"title\":
+      \"Dogs\",\n      \"type\": \"array\"\n    }\n  },\n  \"required\": [\n    \"dogs\"\n  ],\n  \"title\":
+      \"Dogs\",\n  \"type\": \"object\"\n}"},{"role":"user","content":"Invent 3 cool
+      dogs"}],"model":"deepseek-v4-flash","max_tokens":8192,"response_format":{"type":"json_object"},"stream":false}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1053'
+      Content-Type:
+      - application/json
+      Host:
+      - api.deepseek.com
+      User-Agent:
+      - OpenAI/Python 2.32.0
+      X-Stainless-Arch:
+      - x64
+      X-Stainless-Async:
+      - 'false'
+      X-Stainless-Lang:
+      - python
+      X-Stainless-OS:
+      - Linux
+      X-Stainless-Package-Version:
+      - 2.32.0
+      X-Stainless-Runtime:
+      - CPython
+      X-Stainless-Runtime-Version:
+      - 3.14.3
+      x-stainless-read-timeout:
+      - '600'
+      x-stainless-retry-count:
+      - '0'
+    method: POST
+    uri: https://api.deepseek.com/beta/chat/completions
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAEAwAAAP//jFRNj9MwEP0rI59ASqs06UfaG4i9rGCR4MCBriI3mSTeOp7IdtotVf87
+        42a3XaAHTrHn8/nNmxyFKsVK4GwSY1xuRsVMbkbTbL4ZLZeYjTBNpgkm82WSoIgEbZ6w8BxfNNKP
+        C2o7jV6RYVdhUXrkWpPFYhFPF2maRqKlEjWHl4idQ9yOdtNRpaVrQkJDqkAnVj+PQpkSn8Uq5gx0
+        TtYoVkdhSfNXSOeU89L4kEPGI59W4rg2AGtRUu3WYgU/wxXgbA2HtTCyxeBZi49a/uJjNIQEHzcI
+        rukb00bREP0BKoX2AE3vtgfYNwSadujAE9jegG8s9XUDztAepCmBmXAIhqxv0BrQqm68G6/F0O30
+        0uImsDum4Bau5DYu51Fq3xygIFsrMMo8yQik3suDA6c0EwO98UqDaxA20m4d7JVvGHPP/DJuBx3t
+        0f4fugfayVvoZrfRFeRaVUBNukQDFr1VuEN7ZrChvXYgPQMj8srUwAO1bGH+Oh3gV+iLZkDLqsK3
+        DAYiH9fmxONniTnid9f5VQg/mHzEMsynRoOWRQj3378+DMWkAWmtPABVkMInqmGQsBvDneSOwcID
+        hKAWeOcYtKnfM6k13xRrrUbLVxbHxTmGL3KLzCm2PAjSXOhZhj0IUvtGxRY9swZpxNfPZ+VU+hCe
+        /KoczgSpwhCAHz2G+955oN53vT8DH4tTJDTVnaUNb4fptY5EpYxyTT4QwPJ3njpxeoxE/7otHN52
+        Pve0RcNpSZqFdXld0It9spxEwpOX+mKaJstI/JGel+il0lzmKAqmCctL8CTJGN4/hd9mXKf0CmY2
+        55yXDud6eaOuULnkX95WOXftOIk52x1Y/m3OPPBIOh5T+AlUXR7PsrJKlss0y7lBGWdJnFddlm93
+        Q6MkTubxNE7E6TcAAAD//wMAQIzvKeoEAAA=
+    headers:
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 24 Apr 2026 16:15:33 GMT
+      Server:
+      - elb
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 e245f8b9af3dc3d1896ca714ebe230f4.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - PCxCF06adLaeBhjdnjyde4NOTR7N9b9_WpGVZ9MR6nRdYb9RJ6Xj8Q==
+      X-Amz-Cf-Pop:
+      - TXL52-P2
+      X-Cache:
+      - Miss from cloudfront
+      X-Content-Type-Options:
+      - nosniff
+      access-control-allow-credentials:
+      - 'true'
+      vary:
+      - origin, access-control-request-method, access-control-request-headers
+      x-ds-trace-id:
+      - d8f19c1b63e71639daa5a3eb9f141f07
     status:
       code: 200
       message: OK
