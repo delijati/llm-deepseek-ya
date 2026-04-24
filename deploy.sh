@@ -3,6 +3,6 @@ rm -rf dist/ build/ *.egg-info/
 python -m build
 twine check dist/*
 twine upload dist/*
-git tag -a v1.0.0 -m "Release version 1.0.0"
-git push origin v1.0.0
+git tag -a v2.0.1 -m "Release version 2.0.1 aka deepseek v4"
+git push origin v2.0.1
 
