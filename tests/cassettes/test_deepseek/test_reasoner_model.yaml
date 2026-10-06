@@ -1,175 +1,85 @@
 interactions:
 - request:
-    body: '{"messages":[{"role":"user","content":"What is 537 * 943?"}],"model":"deepseek-v4-flash","max_tokens":8192,"stream":false}'
+    body: '{"model":"deepseek-flash","stream":false,"messages":[{"role":"user","content":"What
+      is 537 * 943?"}],"max_tokens":8192}'
     headers:
-      Accept:
+      accept:
       - application/json
-      Accept-Encoding:
+      accept-encoding:
       - gzip, deflate
-      Connection:
+      connection:
       - keep-alive
-      Content-Length:
-      - '122'
-      Content-Type:
+      content-length:
+      - '119'
+      content-type:
       - application/json
-      Host:
+      host:
       - api.deepseek.com
-      User-Agent:
-      - OpenAI/Python 2.32.0
-      X-Stainless-Arch:
+      user-agent:
+      - OpenAI/Python 3.24.0
+      x-stainless-arch:
       - x64
-      X-Stainless-Async:
+      x-stainless-async:
       - 'false'
-      X-Stainless-Lang:
+      x-stainless-lang:
       - python
-      X-Stainless-OS:
+      x-stainless-os:
       - Linux
-      X-Stainless-Package-Version:
-      - 2.32.0
-      X-Stainless-Runtime:
-      - CPython
-      X-Stainless-Runtime-Version:
-      - 3.14.3
+      x-stainless-package-version:
+      - 3.24.0
       x-stainless-read-timeout:
       - '600'
       x-stainless-retry-count:
       - '0'
+      x-stainless-runtime:
+      - CPython
+      x-stainless-runtime-version:
+      - 3.12.12
     method: POST
     uri: https://api.deepseek.com/beta/chat/completions
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAEAwAAAP//ZFNLb5wwEP4rli9NtmZlMCyPKqpy7y2VoqqpkBeGxV1jU2zSRlH+e8ew
-        2U3aCwzj7zEzjJ+pamlF5V7KnejaqORlEaX7kkelFPso7vJcdoLLTMSUUbv/CY1HfNNLv23sMGrw
-        yho8aiaQHlArzvOcizzjMaODbUEjvAUYHcAxekyjTkvXB0JvVQOOVt+fqTIt/KEVRwY4Jw9Aq2c6
-        WY1vKp1TzkvjA8caDxhVNBM5GWbt1agVtGT/RMpUEPg1S+1IxndMlPEWGViVs0aZQ33h3gMxgCRv
-        SWhh9kCC3CZIbMkX8B8cae1ZvpGhxe2DeTDIbKQJh6GiVk7tP6gqoM5i5OYkfFVyTj6SNDzE9Zre
-        rDkEb5Z8CMTiEqJwuLA35SZe4rQQAms8fzDB+WdyL5WvgsumRHzAMOLsElx4AXpWRrNVOEUAhkmc
-        FovuErO0uEAFpmK2i+OFfDcPVRAOathHEgds0OIpywv+iYx6dit+ya7/IAzkVnuYDI7xEfQTw/HN
-        ew1R00NzPNUeBn9rrO9hIgP43rbLwdrvqWDG0XdQBk1Cv1m+Pb2DGyauMv4xv75JdqzIlkGzPAtD
-        EZzteLkldzbAFpXolHxTJ/kGbmnza48G0rjfWIp6s0svjGp7GCe7x501s9aMdsoo19frjuFSOm9H
-        +vKD0fl1hxE+jL729ggGaXESdvj11pzTSZYy6q2X+pLa7Rh9x65b8FJpVHmmjcThtWcwx9r+k32L
-        v9yC10qSNEHSyWCRq3t1KRRv4ruzQTl3tosD1T05D0ONIzjANE5quZXdWPOsaLukLEVRo0LLi4TX
-        3VjUx8fVJeHJjqc8oS9/AQAA//8DAECHoZd7BAAA
+        H4sIAAAAAAAEAwAAAP//ZFLBrpswEPwVy5dKEUE2dgDnCfXQa9VrVVUVMmYJbgxG2FFbRfn3rsPL
+        y6t6MszOzM6ufaW2p0faaaVNNZT7SstuL4fusK9rXe+HeihVxYtCqp5m1Hc/wUTkm1HH3PhpcRCt
+        n7FkVtAR0ItXihcoKlVGJ9+DQ3oPsASA835wOoyJPXprINDj9yu1cw+/6ZEhHULQJ6DHK129w5Pq
+        EGyIeo5J4+cI+HWkB1ZmQnHEsGnws51P7bP6FcgM0BM9h1+wEr3aOE4Y0+TkS8JT7EsEchDVTkmR
+        k88QPwRitDMXhzPkBNHdgbFGVhyP7V9UTYIFa4q6UOyF7KqmLBl/IeEyESFrxXMSfdSOYDxMl5NP
+        I5hzvvVJbrUQLAmlaArBFP94L0l05LJOBdHwkqPjZnPnbPYPx28QXocY7IydcGhjA+T0llHnT8vq
+        O9zpfHEuo8iwYWy3DeHSQvQLvf3I6OWxY6RPS2yjP8OMMlGnHT+u9A3mrMjoPdETknhZ/6jbHqK2
+        Dl2u1GgzQv9GZpjtP9v3/OcdPpKoGjWv/ne3drTPnM/eW22yIbx1E0ka/oQIU4sbOMG6rPb+aDR0
+        h1IybnQlgRdVXXAjh/RWe9OVpaK3vwAAAP//AwALzMTRDAMAAA==
     headers:
-      Connection:
+      access-control-allow-credentials:
+      - 'true'
+      connection:
       - keep-alive
-      Content-Encoding:
+      content-encoding:
       - gzip
-      Content-Type:
+      content-type:
       - application/json
-      Date:
-      - Fri, 24 Apr 2026 13:31:41 GMT
-      Server:
+      date:
+      - Tue, 06 Oct 2026 06:56:09 GMT
+      server:
       - elb
-      Strict-Transport-Security:
+      strict-transport-security:
       - max-age=31536000; includeSubDomains; preload
-      Transfer-Encoding:
+      transfer-encoding:
       - chunked
-      Via:
-      - 1.1 b0a751f9161fd546ec249858c6f7afc6.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - zwIrONP7nSqijAqaIQ9-UijAUBuwm5XYAu_vPXUoMeFFhP6xl3Z_dQ==
-      X-Amz-Cf-Pop:
+      vary:
+      - origin, access-control-request-method, access-control-request-headers
+      via:
+      - 1.1 3d98ff2f094b729179a8f8c2a7dd59ba.cloudfront.net (CloudFront)
+      x-amz-cf-id:
+      - _KCBokPpRZJk9y7itmQczu7gbGMCljYs-_WlxbnjFueqfBy49e4apg==
+      x-amz-cf-pop:
       - TXL52-P2
-      X-Cache:
+      x-cache:
       - Miss from cloudfront
-      X-Content-Type-Options:
+      x-content-type-options:
       - nosniff
-      access-control-allow-credentials:
-      - 'true'
-      vary:
-      - origin, access-control-request-method, access-control-request-headers
       x-ds-trace-id:
-      - b19d74c8600dc16d3377cf61357b6fc1
-    status:
-      code: 200
-      message: OK
-- request:
-    body: '{"messages":[{"role":"user","content":"What is 537 * 943?"}],"model":"deepseek-v4-flash","max_tokens":8192,"stream":false}'
-    headers:
-      Accept:
-      - application/json
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '122'
-      Content-Type:
-      - application/json
-      Host:
-      - api.deepseek.com
-      User-Agent:
-      - OpenAI/Python 2.32.0
-      X-Stainless-Arch:
-      - x64
-      X-Stainless-Async:
-      - 'false'
-      X-Stainless-Lang:
-      - python
-      X-Stainless-OS:
-      - Linux
-      X-Stainless-Package-Version:
-      - 2.32.0
-      X-Stainless-Runtime:
-      - CPython
-      X-Stainless-Runtime-Version:
-      - 3.14.3
-      x-stainless-read-timeout:
-      - '600'
-      x-stainless-retry-count:
-      - '0'
-    method: POST
-    uri: https://api.deepseek.com/beta/chat/completions
-  response:
-    body:
-      string: !!binary |
-        H4sIAAAAAAAEAwAAAP//ZFRNj9MwEP0rli8sWbdyYrdJilYIzggOIHEAFLnJZGPqxFHssKxW+98Z
-        O+2mKy7tZOa9+R4/Ud3QA92lTbsHoTapbIuNzJp8U4oSNs2+EOVeiJJnijJqj7+h9oivO+W3te1H
-        A17bAU31BMoD+krzPOcyF6JgtLcNGIQ3AKMDOG3+yE1rlOsCobO6BkcPP56oHhr4Sw8cGeCcugd6
-        eKKTNfhPlXPaeTX4wLGDB5QO9FsHZJxsM9ee2JbsRE7U0JBSCqId2fE9E2W6RQqm5eygh/tqJX8H
-        MgA0xFsSapg9RAdJoG/JJ/BvHGks6Wfj9Wh0rUKN25/DzwGZtRrIEb2eiPaIehgOK5ncneWbknNy
-        S2T4EW8XdbLoMNUk6oMgotcgBeOFXZKEpPFbFkJcfzDB+XvyXWkfoyYlcgKGkUdwjDgbv5IX8oL/
-        UPtZGfMYklsDJeWKE6sYKFvycfZY6QTtbM6RLvksLr/hAhAcae+w/S05Qq1mh23kPAS4kzvOOOcx
-        o3PQO8wzcMN8lqGoo4FY/2f461lMDhsTm5BITAjFLJXFRWKy4BGOsx8iWiAiZfs0jeqvc38I5ccg
-        t0gNhOCOS5YX/B0ZzewWfNQuKxKm+tXi8rgHmK5352rcjZ0x1U3dQX0iD9p3CLe+Q3wPvrPN6w24
-        wSbcivxtEpYxhMeWoISLgM2PKpmnDNWoujkPJBpl3JRr46UWhJdpWKPVKCQryvSqEPJlCvubYLuJ
-        0702ajKP535h3f8XSJ8ZNfYer+iIVzjMxjDa6kG7rlrmg2fmvB3p8y9G58tVIrwffeXtCQakpVm4
-        yss78KIWMmfUW6/MqtqVjL5iVw14pQ16eaK1wu42L2COuf3n9hq/nvUlEyEyJJ0DRHdVp9dE8W15
-        Zeu1cy/h0kB1j85DX2EL7mEaJx3fmXas+K5o2qwsRVGhh4YXGa/asahOf5YoGc/2XPKMPv8DAAD/
-        /wMA9j4Usk0FAAA=
-    headers:
-      Connection:
-      - keep-alive
-      Content-Encoding:
-      - gzip
-      Content-Type:
-      - application/json
-      Date:
-      - Fri, 24 Apr 2026 16:15:38 GMT
-      Server:
-      - elb
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-      Transfer-Encoding:
-      - chunked
-      Via:
-      - 1.1 baf250e244bb7810e57efa7ca7e2176c.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - 69LOrs2EfEjENDz1pbPBI-grYtEP3fbhSs5OkO2XuJ7jG1h5OdrocA==
-      X-Amz-Cf-Pop:
-      - TXL52-P1
-      X-Cache:
-      - Miss from cloudfront
-      X-Content-Type-Options:
-      - nosniff
-      access-control-allow-credentials:
-      - 'true'
-      vary:
-      - origin, access-control-request-method, access-control-request-headers
-      x-ds-trace-id:
-      - 6220767920f1024ff8f56fd13b5c1cbb
+      - dc1e95657679c8adf19f7b83ed034c4f
     status:
       code: 200
       message: OK

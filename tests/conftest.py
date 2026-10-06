@@ -8,8 +8,8 @@ def vcr_config():
         "filter_headers": ["authorization"],
         # Ignore date-related headers to prevent cassette mismatches
         "ignore_headers": ["date", "set-cookie"],
-        # Match requests based on method, scheme, host, port, path, and query
-        "match_on": ["method", "scheme", "host", "port", "path", "query"],
+        # Match on body too, so request changes (e.g. model name) fail until re-recorded
+        "match_on": ["method", "scheme", "host", "port", "path", "query", "body"],
     }
 
 
@@ -26,7 +26,7 @@ def mock_deepseek_models(monkeypatch):
 
     def mock_get_deepseek_models():
         return [
-            {"id": "deepseek-v4-flash", "object": "model", "owned_by": "deepseek"},
+            {"id": "deepseek-flash", "object": "model", "owned_by": "deepseek"},
             {"id": "deepseek-v4-pro", "object": "model", "owned_by": "deepseek"},
         ]
 

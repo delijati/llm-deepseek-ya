@@ -1,3 +1,7 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "llm-deepseek-ya"
 version = "2.0.1"
@@ -22,6 +26,8 @@ dev = ["ruff"]
 
 [tool.pytest.ini_options]
 filterwarnings = ["ignore::DeprecationWarning"]
+pythonpath = ["."]
+required_plugins = ["pytest-recording"]
 
 [tool.setuptools]
 py-modules = ["llm_deepseek"]

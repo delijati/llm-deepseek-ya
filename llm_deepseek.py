@@ -27,11 +27,11 @@ def get_deepseek_models():
     return ret
 
 
-# Backward compatibility aliases for deprecated model names.
-# Per DeepSeek pricing docs: deepseek-chat and deepseek-reasoner will be deprecated;
-# they correspond to the non-thinking and thinking modes of deepseek-v4-flash.
+# Backward compatibility aliases for legacy model names.
+# Per DeepSeek pricing docs: deepseek-v4-flash and deepseek-v4-flash-vision-exp are
+# retired; requests are served (and billed) by deepseek-flash.
 DEPRECATED_MODEL_ALIASES = {
-    "deepseek-v4-flash": ["deepseek-chat", "deepseek-reasoner"],
+    "deepseek-flash": ["deepseek-v4-flash", "deepseek-v4-flash-vision-exp"],
 }
 
 
@@ -242,7 +242,7 @@ def register_models(register):
                     model_id=f"deepseek/{model_id}",
                     model_name=model_id,
                 ),
-                aliases=[model_id],
+                aliases=[model_id, *aliases],
             )
     except DownloadError as e:
         print(f"Error fetching DeepSeek models: {e}")
@@ -264,7 +264,7 @@ def register_commands(cli):
             # Display all Chat models
             for model_id, aliases in models_with_aliases:
                 print(f"DeepSeek Chat: deepseek/{model_id}")
-                print(f"  Aliases: {model_id}")
+                print(f"  Aliases: {', '.join([model_id, *aliases])}")
                 print()
         except DownloadError as e:
             print(f"Error fetching DeepSeek models: {e}")

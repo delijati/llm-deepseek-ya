@@ -29,25 +29,22 @@ Run `llm models` to list the models, and `llm models --options` to include a lis
 Run prompts like this:
 
 ```bash
-llm -m deepseek-chat "Describe a futuristic city on Mars"
-llm -m deepseek-chat-completion "The AI began to dream, and in its dreams," -o echo true
-llm -m deepseek-reasoner "Write a Python function to sort a list of numbers"
+llm -m deepseek-flash "Describe a futuristic city on Mars"
+llm -m deepseek-v4-pro "Write a Python function to sort a list of numbers"
 ```
 
-Note: The DeepSeek Reasoner model only supports the chat endpoint, not the completion endpoint.
+The legacy names `deepseek-v4-flash` and `deepseek-v4-flash-vision-exp` are aliases for `deepseek-flash`.
 
-### DeepSeek Reasoner Model
+### Thinking Mode
 
-The DeepSeek Reasoner model uses a Chain of Thought (CoT) approach to solve complex problems, showing its reasoning process before providing the final answer.
-
-The plugin shows the model's chain of thought reasoning by default in non-streaming mode. The reasoning feature is currently only supported in non-streaming mode.
+Both models think by default and the plugin shows the chain of thought reasoning before the final answer.
 
 ```bash
 # Normal usage - will show reasoning by default
-llm -m deepseek-reasoner "What is 537 * 943?"
+llm -m deepseek-flash "What is 537 * 943?"
 
 # Hide reasoning when you only want the final answer
-llm -m deepseek-reasoner "What is 537 * 943?" -o show_reasoning false
+llm -m deepseek-flash "What is 537 * 943?" -o show_reasoning false
 ```
 
 ### Features
@@ -59,7 +56,7 @@ The `prefill` option allows you to provide initial text for the model's response
 Example:
 
 ```bash
-llm -m deepseek-chat "What are some wild and crazy activities for a holiday party?" -o prefill "Here are some off-the-wall ideas to make your holiday party unforgettable [warning: these may not be suitable for work holiday parties]:"
+llm -m deepseek-flash "What are some wild and crazy activities for a holiday party?" -o prefill "Here are some off-the-wall ideas to make your holiday party unforgettable [warning: these may not be suitable for work holiday parties]:"
 ```
 
 You can also load prefill text from a file:
@@ -69,7 +66,7 @@ You can also load prefill text from a file:
 echo "Here are some unique holiday party ideas:" > prefill.txt
 
 # Use the file path as the prefill value
-llm -m deepseek-chat "What are some fun activities for a holiday party?" -o prefill prefill.txt
+llm -m deepseek-flash "What are some fun activities for a holiday party?" -o prefill prefill.txt
 ```
 
 This is especially useful for longer prefill text that would be unwieldy on the command line.
@@ -81,13 +78,13 @@ The `response_format` option allows you to specify that the model should output 
 Example:
 
 ```bash
-llm -m deepseek-chat "What are some fun activities for a holiday party?" -o response_format json_object --system "json"
+llm -m deepseek-flash "What are some fun activities for a holiday party?" -o response_format json_object --system "json"
 ```
 
 To guide the model further, you can provide an example JSON structure:
 
 ```bash
-llm -m deepseek-chat "What are some way to tell if a holiday party is fun?" -o response_format json_object --system 'EXAMPLE JSON OUTPUT: {"event": "holiday_party_fun", "success_metric": ["..."]}'
+llm -m deepseek-flash "What are some way to tell if a holiday party is fun?" -o response_format json_object --system 'EXAMPLE JSON OUTPUT: {"event": "holiday_party_fun", "success_metric": ["..."]}'
 ```
 
 #### JSON Schema Support
@@ -99,7 +96,7 @@ DeepSeek Chat models support JSON schema output (via LLM's `--schema` option). W
 Example:
 
 ```bash
-llm -m deepseek-chat "Generate a user profile" --schema '{"type": "object", "properties": {"name": {"type": "string"}, "age": {"type": "number"}, "email": {"type": "string"}}, "required": ["name", "age"]}'
+llm -m deepseek-flash "Generate a user profile" --schema '{"type": "object", "properties": {"name": {"type": "string"}, "age": {"type": "number"}, "email": {"type": "string"}}, "required": ["name", "age"]}'
 ```
 
 You can also use LLM's schema file support:
@@ -120,7 +117,7 @@ cat > user_schema.json << 'EOF'
 EOF
 
 # Use the schema file
-llm -m deepseek-chat "Generate a user profile for a software developer" --schema user_schema.json
+llm -m deepseek-flash "Generate a user profile for a software developer" --schema user_schema.json
 ```
 
 ## Development
