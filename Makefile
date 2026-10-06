@@ -32,9 +32,9 @@ build: clean
 	uv build
 	uvx twine check dist/*
 
-# Needs UV_PUBLISH_TOKEN (PyPI API token) in the environment.
+# twine reads credentials from ~/.pypirc (or TWINE_USERNAME/TWINE_PASSWORD).
 publish: build
-	uv publish
+	uvx twine upload dist/*
 
 tag:
 	git tag -a v$(VERSION) -m "Release version $(VERSION)"

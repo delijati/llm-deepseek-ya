@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "llm-deepseek-ya"
-version = "2.0.1"
+version = "3.0.0"
 description = "Yet another LLM access to DeepSeek's API"
 readme = "README.md"
 license = "MIT"
